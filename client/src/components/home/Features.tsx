@@ -1,28 +1,28 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
-import { Settings2, LineChart, Users, Shield } from "lucide-react";
+import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
 
 const features = [
   {
-    icon: Settings2,
-    title: "Powerful Automation",
-    description: "Streamline your workflow with intelligent automation tools"
+    icon: PencilRuler,
+    title: "Custom Design",
+    description: "Expert architectural and interior design services tailored to your vision"
   },
   {
-    icon: LineChart,
-    title: "Advanced Analytics",
-    description: "Get deep insights with real-time data visualization"
+    icon: Building2,
+    title: "Development Planning",
+    description: "Comprehensive project planning and development strategy"
   },
   {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Work seamlessly with your team in real-time"
+    icon: Hammer,
+    title: "Construction Excellence",
+    description: "Quality construction with attention to detail and craftsmanship"
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-grade security to protect your sensitive data"
+    icon: ClipboardCheck,
+    title: "Project Management",
+    description: "End-to-end project oversight ensuring timely completion"
   }
 ];
 

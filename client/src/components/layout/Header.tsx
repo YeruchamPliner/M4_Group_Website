@@ -36,7 +36,7 @@ export default function Header() {
           <div className="flex items-center space-x-2 cursor-pointer">
             <Building2 className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold text-white">
-              Build<span className="text-primary">Craft</span>
+              M4<span className="text-primary">Development</span>
             </span>
           </div>
         </Link>

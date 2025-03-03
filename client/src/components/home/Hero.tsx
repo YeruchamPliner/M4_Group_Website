@@ -20,7 +20,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-gray-800 text-gray-200 rounded-full"
           >
-            Design • Build • Transform
+            Design • Development • Construction
           </motion.span>
 
           <motion.h1
@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            Building Dreams Into Reality, From Concept to Completion
+            Building Excellence, Delivering Results
           </motion.h1>
 
           <motion.p
@@ -38,7 +38,7 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-gray-400 mb-10"
           >
-            Expert design and construction services for your residential and commercial projects. We handle everything from initial design to final construction.
+            M4 Development Group provides comprehensive design-build solutions for commercial and residential projects. From concept to completion, we transform your vision into reality.
           </motion.p>
 
           <motion.div
