@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Building2, Hammer, Users, Phone } from "lucide-react";
 
 export default function Header() {
   const { scrollY } = useScroll();
@@ -32,39 +33,45 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
-          <span className="text-2xl font-bold text-white cursor-pointer">
-            SaaS<span className="text-primary">Hub</span>
-          </span>
+          <div className="flex items-center space-x-2 cursor-pointer">
+            <Building2 className="h-8 w-8 text-primary" />
+            <span className="text-2xl font-bold text-white">
+              Build<span className="text-primary">Craft</span>
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/resources">
-            <span className={`cursor-pointer transition-colors ${
-              isActive("/resources") ? "text-white" : "text-gray-300 hover:text-white"
-            }`}>
-              Resources
-            </span>
-          </Link>
-          <Link href="/pricing">
-            <span className={`cursor-pointer transition-colors ${
-              isActive("/pricing") ? "text-white" : "text-gray-300 hover:text-white"
-            }`}>
-              Pricing
-            </span>
-          </Link>
-          <Link href="/blog">
-            <span className={`cursor-pointer transition-colors ${
-              isActive("/blog") ? "text-white" : "text-gray-300 hover:text-white"
-            }`}>
-              Blog
-            </span>
-          </Link>
+          <NavLink href="/about" icon={<Users className="w-4 h-4" />}>
+            About Us
+          </NavLink>
+          <NavLink href="/services" icon={<Hammer className="w-4 h-4" />}>
+            Services
+          </NavLink>
+          <Button asChild variant="secondary" className="flex items-center space-x-2">
+            <Link href="/contact">
+              <Phone className="w-4 h-4 mr-2" />
+              Contact Us
+            </Link>
+          </Button>
         </nav>
-
-        <Button variant="secondary" className="bg-white text-black hover:bg-gray-100">
-          Get Started
-        </Button>
       </div>
     </motion.header>
+  );
+}
+
+function NavLink({ href, children, icon }: { href: string; children: React.ReactNode; icon: React.ReactNode }) {
+  const [location] = useLocation();
+  const isActive = location === href;
+
+  return (
+    <Link href={href}>
+      <a className={`flex items-center space-x-2 cursor-pointer transition-colors ${
+        isActive ? "text-white" : "text-gray-300 hover:text-white"
+      }`}>
+        {icon}
+        <span>{children}</span>
+      </a>
+    </Link>
   );
 }
