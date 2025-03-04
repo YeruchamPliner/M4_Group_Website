@@ -22,8 +22,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActive = (path: string) => location === path;
-
   return (
     <motion.header
       style={{ backgroundColor }}
@@ -32,13 +30,11 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/">
-          <div className="flex items-center space-x-2 cursor-pointer">
-            <Building2 className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-white">
-              M4<span className="text-primary">Development</span>
-            </span>
-          </div>
+        <Link href="/" className="flex items-center space-x-2">
+          <Building2 className="h-8 w-8 text-primary" />
+          <span className="text-2xl font-bold text-white">
+            M4<span className="text-primary">Development</span>
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
@@ -48,12 +44,12 @@ export default function Header() {
           <NavLink href="/services" icon={<Hammer className="w-4 h-4" />}>
             Services
           </NavLink>
-          <Button asChild variant="secondary" className="flex items-center space-x-2">
-            <Link href="/contact">
+          <Link href="/contact">
+            <Button variant="secondary" className="flex items-center space-x-2">
               <Phone className="w-4 h-4 mr-2" />
               Contact Us
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </nav>
       </div>
     </motion.header>
@@ -65,13 +61,14 @@ function NavLink({ href, children, icon }: { href: string; children: React.React
   const isActive = location === href;
 
   return (
-    <Link href={href}>
-      <a className={`flex items-center space-x-2 cursor-pointer transition-colors ${
+    <Link 
+      href={href} 
+      className={`flex items-center space-x-2 transition-colors ${
         isActive ? "text-white" : "text-gray-300 hover:text-white"
-      }`}>
-        {icon}
-        <span>{children}</span>
-      </a>
+      }`}
+    >
+      {icon}
+      <span>{children}</span>
     </Link>
   );
 }
