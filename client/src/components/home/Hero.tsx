@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Hero() {
   return (
@@ -50,17 +51,21 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-8">
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-gray-700 text-white hover:bg-gray-800 text-lg px-8"
-            >
-              View Our Work
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 text-lg px-8">
+                Start Your Project
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/projects">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-700 text-white hover:bg-gray-800 text-lg px-8"
+              >
+                View Our Work
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
