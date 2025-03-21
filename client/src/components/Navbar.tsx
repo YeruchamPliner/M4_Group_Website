@@ -1,14 +1,17 @@
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Building2 } from "lucide-react";
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Building2 className="h-6 w-6 text-primary" />
+          <img 
+            src="/attached_assets/image_1742557085717.jpeg" 
+            alt="M4 Development Group Logo" 
+            className="h-8 w-auto"
+          />
           <span className="font-bold text-xl text-white">M4 Development</span>
         </Link>
 

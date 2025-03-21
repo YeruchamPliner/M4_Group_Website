@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Building2, Hammer, Users, Phone } from "lucide-react";
+import { Phone, Users, Hammer } from "lucide-react";
 
 export default function Header() {
   const { scrollY } = useScroll();
@@ -31,7 +31,11 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Building2 className="h-8 w-8 text-primary" />
+          <img 
+            src="/attached_assets/image_1742557085717.jpeg" 
+            alt="M4 Development Group Logo" 
+            className="h-10 w-auto"
+          />
           <span className="text-2xl font-bold text-white">
             M4<span className="text-primary">Development</span>
           </span>
