@@ -5,27 +5,27 @@ import { useState, useEffect } from "react";
 
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1587351021355-a479a299d2f9?auto=format&fit=crop&q=80",
-    alt: "Modern American Healthcare Facility 1",
+    url: "https://images.unsplash.com/photo-1587351021355-a479a299d2f9",
+    alt: "Modern American Nursing Home Facility",
     title: "Healthcare"
   },
   {
-    url: "https://images.unsplash.com/photo-1626315869436-d6989fb40e0f?auto=format&fit=crop&q=80",
-    alt: "American Healthcare Facility 2",
+    url: "https://images.unsplash.com/photo-1626315869436-d6989fb40e0f",
+    alt: "American Rehabilitation Center",
     title: "Healthcare"
   },
   {
-    url: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80",
-    alt: "American Healthcare Facility 3",
+    url: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e",
+    alt: "Senior Living Facility",
     title: "Healthcare"
   },
   {
-    url: "https://images.unsplash.com/photo-1577760258779-e787a1733016?auto=format&fit=crop&q=80",
+    url: "https://images.unsplash.com/photo-1577760258779-e787a1733016",
     alt: "American Commercial Building - Downtown Chicago",
     title: "Commercial"
   },
   {
-    url: "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&fit=crop&q=80",
+    url: "https://images.unsplash.com/photo-1571055107559-3e67626fa8be",
     alt: "Modern American Multi-Family Housing",
     title: "Multi-Family"
   }
