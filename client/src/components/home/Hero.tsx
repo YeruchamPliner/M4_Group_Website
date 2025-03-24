@@ -5,9 +5,39 @@ import GridPattern from "../ui/patterns/GridPattern";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
-      <GridPattern />
+      {/* Background Images */}
+      <div className="absolute inset-0 z-0">
+        <div className="grid grid-cols-3 h-full w-full">
+          <div className="relative">
+            <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
+            <img
+              src="https://images.unsplash.com/photo-1578991624414-276ef23a534f?auto=format&fit=crop&q=80"
+              alt="Healthcare Facility"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
+              alt="Commercial Building"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
+            <img
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80"
+              alt="Multi-Family Housing"
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
 
-      <div className="container mx-auto px-6">
+      <GridPattern className="absolute inset-0 z-10 opacity-40" />
+
+      <div className="container mx-auto px-6 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 mb-10"
+            className="text-lg md:text-xl text-gray-200 mb-10"
           >
             M4 Development Group provides comprehensive design-build solutions for Healthcare, Commercial and Multi-Family projects. From concept to completion, we transform your vision into reality.
           </motion.p>
