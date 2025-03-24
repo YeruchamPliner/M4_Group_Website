@@ -12,7 +12,7 @@ export default function Navbar() {
             alt="M4 Development Group Logo" 
             className="h-24 w-auto"
           />
-          <span className="font-bold text-xl text-white">M4 Development</span>
+          <span className="font-bold text-2xl text-white">M4 Development Group</span>
         </Link>
 
         <div className="flex items-center space-x-6">
@@ -20,7 +20,7 @@ export default function Navbar() {
           <NavLink href="/about">About</NavLink>
           <NavLink href="/services">Services</NavLink>
           <Link href="/contact">
-            <Button variant="default" className="bg-primary text-white hover:bg-primary/90">Contact Us</Button>
+            <Button variant="default" className="bg-primary text-white hover:bg-primary/90 text-lg px-6 py-2">Contact Us</Button>
           </Link>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Navbar() {
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link href={href} className={cn(
-      "text-sm font-medium transition-colors hover:text-primary",
+      "text-lg font-medium transition-colors hover:text-primary",
       "text-gray-200"
     )}>
       {children}
