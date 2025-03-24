@@ -38,7 +38,7 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-gray-400 mb-10"
           >
-            M4 Development Group provides comprehensive design-build solutions for commercial and residential projects. From concept to completion, we transform your vision into reality.
+            M4 Development Group provides comprehensive design-build solutions for commercial and multi-family projects. From concept to completion, we transform your vision into reality.
           </motion.p>
 
           <motion.div
