@@ -1,38 +1,68 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import GridPattern from "../ui/patterns/GridPattern";
+import { useState, useEffect } from "react";
+
+const slides = [
+  {
+    url: "https://images.unsplash.com/photo-1578991624414-276ef23a534f?auto=format&fit=crop&q=80",
+    alt: "Healthcare Facility 1",
+    title: "Healthcare"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80",
+    alt: "Healthcare Facility 2",
+    title: "Healthcare"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80",
+    alt: "Healthcare Facility 3",
+    title: "Healthcare"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+    alt: "Commercial Building",
+    title: "Commercial"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80",
+    alt: "Multi-Family Housing",
+    title: "Multi-Family"
+  }
+];
 
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((current) => (current + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
-        <div className="grid grid-cols-3 h-full w-full">
-          <div className="relative">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="relative h-full"
+          >
             <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
             <img
-              src="https://images.unsplash.com/photo-1578991624414-276ef23a534f?auto=format&fit=crop&q=80"
-              alt="Healthcare Facility"
+              src={slides[currentIndex].url}
+              alt={slides[currentIndex].alt}
               className="object-cover w-full h-full"
             />
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
-            <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
-              alt="Commercial Building"
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
-            <img
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80"
-              alt="Multi-Family Housing"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <GridPattern className="absolute inset-0 z-10 opacity-40" />
