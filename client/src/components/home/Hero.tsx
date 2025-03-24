@@ -37,13 +37,13 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((current) => (current + 1) % slides.length);
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-black">
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
