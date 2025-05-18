@@ -5,19 +5,19 @@ import { useState, useEffect } from "react";
 
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1587351021355-a479a299d2f9",
-    alt: "Modern American Nursing Home Facility",
-    title: "Healthcare"
+    url: "https://images.unsplash.com/photo-1582719471384-894fbb16e074",
+    alt: "Modern American Nursing Home Facility in New England",
+    title: "Nursing Homes"
   },
   {
-    url: "https://images.unsplash.com/photo-1626315869436-d6989fb40e0f",
-    alt: "American Rehabilitation Center",
-    title: "Healthcare"
+    url: "https://images.unsplash.com/photo-1574269909862-7e1d70bb3ed5",
+    alt: "American Rehabilitation Center in Colorado",
+    title: "Rehabilitation Centers"
   },
   {
-    url: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e",
-    alt: "Senior Living Facility",
-    title: "Healthcare"
+    url: "https://images.unsplash.com/photo-1566027310447-8d5ee9c2d421",
+    alt: "Senior Rehabilitation Facility in California",
+    title: "Senior Care"
   },
   {
     url: "https://images.unsplash.com/photo-1577760258779-e787a1733016",
