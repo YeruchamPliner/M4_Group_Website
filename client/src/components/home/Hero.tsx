@@ -109,7 +109,7 @@ export default function Hero() {
               className="flex justify-center items-center"
             >
               <Link href="/consultation">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100">
+                <Button size="lg" className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold">
                   Get Free Consultation
                 </Button>
               </Link>

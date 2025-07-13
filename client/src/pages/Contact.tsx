@@ -30,7 +30,7 @@ export default function Contact() {
                   <span>123 Business Ave, Suite 100</span>
                 </div>
               </div>
-              <Button className="mt-6" size="lg">
+              <Button className="mt-6 bg-yellow-600 text-black hover:bg-yellow-500 font-semibold" size="lg">
                 Schedule a Consultation
               </Button>
             </Card>

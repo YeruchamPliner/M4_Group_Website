@@ -231,7 +231,7 @@ export default function Consultation() {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="bg-white text-black hover:bg-gray-100 px-8"
+                  className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold px-8"
                 >
                   Schedule Free Consultation
                 </Button>
