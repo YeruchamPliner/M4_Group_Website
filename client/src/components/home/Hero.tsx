@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <div className="bg-black min-h-screen">
-      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-black">
+      <section className="relative min-h-[120vh] flex items-center pt-32 overflow-hidden bg-black">
         {/* Background Images */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
@@ -73,7 +73,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-5xl mx-auto text-center"
           >
             <motion.span
               initial={{ opacity: 0 }}
@@ -88,7 +88,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight"
             >
               Building Excellence, Delivering Results
             </motion.h1>
@@ -97,7 +97,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-200 mb-10"
+              className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12"
             >
               M4 Development Group provides comprehensive design-build solutions for Healthcare, Commercial and Multi-Family projects. From concept to completion, we transform your vision into reality.
             </motion.p>
