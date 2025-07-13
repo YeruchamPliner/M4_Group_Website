@@ -44,8 +44,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="bg-black min-h-screen">
-      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-black">
+    <div className="min-h-screen">
+      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
         {/* Background Images */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
