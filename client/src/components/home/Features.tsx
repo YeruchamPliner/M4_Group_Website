@@ -43,8 +43,8 @@ export default function Features() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/70" /> {/* Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1920&q=80"
-          alt="Modern American Healthcare Facility"
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+          alt="Construction and Development Planning"
           className="object-cover w-full h-full"
         />
       </div>
