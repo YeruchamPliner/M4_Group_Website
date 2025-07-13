@@ -1,28 +1,28 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
-import { Heart, Building2, Home, Hammer } from "lucide-react";
+import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
 
 const features = [
   {
-    icon: Heart,
-    title: "Nursing Homes",
-    description: "Specialized design and construction for modern nursing facilities with focus on comfort, safety, and regulatory compliance"
+    icon: PencilRuler,
+    title: "Custom Design",
+    description: "Expert architectural and interior design services tailored to your vision"
   },
   {
     icon: Building2,
-    title: "Rehabilitation Centers",
-    description: "Expert development of rehabilitation facilities with specialized equipment integration and accessibility features"
-  },
-  {
-    icon: Home,
-    title: "Multi-Family Housing",
-    description: "Comprehensive multi-family residential development from apartment complexes to senior living communities"
+    title: "Development Planning",
+    description: "Comprehensive project planning and development strategy"
   },
   {
     icon: Hammer,
-    title: "Commercial Projects",
-    description: "Full-service commercial construction and development for diverse business and institutional needs"
+    title: "Construction Excellence",
+    description: "Quality construction with attention to detail and craftsmanship"
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Project Management",
+    description: "End-to-end project oversight ensuring timely completion"
   }
 ];
 
