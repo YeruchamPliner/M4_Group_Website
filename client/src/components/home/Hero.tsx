@@ -48,23 +48,22 @@ export default function Hero() {
       <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
         {/* Background Images */}
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
+          {slides.map((slide, index) => (
             <motion.div
-              key={currentIndex}
+              key={index}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="relative h-full"
+              animate={{ opacity: index === currentIndex ? 1 : 0 }}
+              transition={{ duration: 1.5 }}
+              className="absolute inset-0 h-full"
             >
               <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
               <img
-                src={slides[currentIndex].url}
-                alt={slides[currentIndex].alt}
+                src={slide.url}
+                alt={slide.alt}
                 className="object-cover w-full h-full"
               />
             </motion.div>
-          </AnimatePresence>
+          ))}
         </div>
 
         <GridPattern className="absolute inset-0 z-10 opacity-40" />
