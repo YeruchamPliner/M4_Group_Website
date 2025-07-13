@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Calendar } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -20,8 +21,14 @@ export default function Navbar() {
           <NavLink href="/about">About</NavLink>
           <NavLink href="/services">Services</NavLink>
           <NavLink href="/projects">Projects</NavLink>
+          <Link href="/consultation">
+            <Button variant="default" className="bg-yellow-600 text-black hover:bg-yellow-500 text-lg px-6 py-2 font-semibold flex items-center space-x-2">
+              <Calendar className="w-4 h-4" />
+              <span>Get Free Consultation</span>
+            </Button>
+          </Link>
           <Link href="/contact">
-            <Button variant="default" className="bg-primary text-white hover:bg-primary/90 text-lg px-6 py-2">Contact Us</Button>
+            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black text-lg px-6 py-2">Contact Us</Button>
           </Link>
         </div>
       </div>
