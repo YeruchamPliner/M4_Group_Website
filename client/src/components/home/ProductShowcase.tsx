@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { MapPin, Calendar, ArrowRight, Building2, Users, Star, ChevronLeft, ChevronRight } from "lucide-react";
