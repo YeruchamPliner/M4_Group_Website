@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <div className="bg-black min-h-screen">
-      <section className="relative min-h-[120vh] flex items-center pt-32 overflow-hidden bg-black">
+      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-black">
         {/* Background Images */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
@@ -79,7 +79,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-gray-800 text-gray-200 rounded-full"
+              className="inline-block px-6 py-3 mb-6 text-lg md:text-xl font-medium bg-gray-800 text-gray-200 rounded-full"
             >
               Design • Development • Construction
             </motion.span>
