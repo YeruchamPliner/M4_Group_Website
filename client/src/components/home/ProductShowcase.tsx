@@ -6,8 +6,9 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { MapPin, Calendar, ArrowRight, Building2, Users, Star } from "lucide-react";
+import { MapPin, Calendar, ArrowRight, Building2, Users, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
+import { useRef } from "react";
 
 const featuredProjects = [
   {
@@ -102,6 +103,20 @@ export default function ProductShowcase() {
     threshold: 0.1
   });
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section ref={ref} className="py-24 bg-gray-950">
       <div className="container mx-auto px-6">
@@ -119,9 +134,30 @@ export default function ProductShowcase() {
           </p>
         </motion.div>
 
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex space-x-6 pb-4">
-            {featuredProjects.map((project, index) => (
+        <div className="relative">
+          {/* Left Arrow */}
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-gray-900/80 backdrop-blur-lg border-gray-700 hover:bg-gray-800/90 text-white h-12 w-12 rounded-full shadow-lg"
+            onClick={scrollLeft}
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </Button>
+
+          {/* Right Arrow */}
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-gray-900/80 backdrop-blur-lg border-gray-700 hover:bg-gray-800/90 text-white h-12 w-12 rounded-full shadow-lg"
+            onClick={scrollRight}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </Button>
+
+          <ScrollArea className="w-full whitespace-nowrap">
+            <div ref={scrollContainerRef} className="flex space-x-6 pb-4">
+              {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -255,9 +291,10 @@ export default function ProductShowcase() {
                 </Dialog>
               </motion.div>
             ))}
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
