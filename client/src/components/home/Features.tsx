@@ -38,8 +38,17 @@ export default function Features() {
   });
 
   return (
-    <section ref={ref} className="py-24 bg-black">
-      <div className="container mx-auto px-6">
+    <section ref={ref} className="py-24 relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/70" /> {/* Overlay */}
+        <img
+          src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1920&q=80"
+          alt="Modern American Healthcare Facility"
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

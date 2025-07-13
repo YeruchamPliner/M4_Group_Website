@@ -124,8 +124,17 @@ export default function ProductShowcase() {
   };
 
   return (
-    <section ref={ref} className="py-24 bg-gray-950">
-      <div className="container mx-auto px-6">
+    <section ref={ref} className="py-24 relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/75" /> {/* Overlay */}
+        <img
+          src="https://images.unsplash.com/photo-1574269909862-7e1d70bb3ed5?auto=format&fit=crop&w=1920&q=80"
+          alt="American Rehabilitation Center"
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
