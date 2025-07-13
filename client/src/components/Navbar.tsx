@@ -19,6 +19,7 @@ export default function Navbar() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/services">Services</NavLink>
+          <NavLink href="/projects">Projects</NavLink>
           <Link href="/contact">
             <Button variant="default" className="bg-primary text-white hover:bg-primary/90 text-lg px-6 py-2">Contact Us</Button>
           </Link>
