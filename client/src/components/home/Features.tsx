@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { PencilRuler, Building2, Hammer, ClipboardCheck, Users, Shield, Zap, Globe, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
 
 const features = [
   {
@@ -53,7 +53,7 @@ export default function Features() {
             Comprehensive design-build services from concept to completion
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
