@@ -129,8 +129,8 @@ export default function ProductShowcase() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/75" /> {/* Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1574269909862-7e1d70bb3ed5?auto=format&fit=crop&w=1920&q=80"
-          alt="American Rehabilitation Center"
+          src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1920&q=80"
+          alt="Healthcare Facility Portfolio"
           className="object-cover w-full h-full"
         />
       </div>
