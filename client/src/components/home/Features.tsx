@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
-import { PencilRuler, Building2, Hammer, ClipboardCheck, ChevronDown, ChevronUp } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
 import { useState } from "react";
 
 const features = [
@@ -36,12 +37,6 @@ export default function Features() {
     triggerOnce: true,
     threshold: 0.1
   });
-  
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
-  
-  const toggleCard = (index: number) => {
-    setExpandedCard(expandedCard === index ? null : index);
-  };
 
   return (
     <section ref={ref} className="py-24 bg-black">
@@ -61,62 +56,41 @@ export default function Features() {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => {
-            const isExpanded = expandedCard === index;
-            
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`${isExpanded ? 'lg:col-span-2' : ''}`}
-              >
-                <Card 
-                  className="p-6 bg-gray-900/50 backdrop-blur-lg border-gray-800 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer"
-                  onClick={() => toggleCard(index)}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <feature.icon className="w-12 h-12 text-white mb-4" />
-                      <h3 className="text-xl font-semibold text-white mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-400 mb-4">
-                        {feature.description}
-                      </p>
-                      
-                      <motion.div
-                        initial={false}
-                        animate={{
-                          height: isExpanded ? 'auto' : 0,
-                          opacity: isExpanded ? 1 : 0
-                        }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        {isExpanded && (
-                          <div className="pt-4 border-t border-gray-700">
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                              {feature.expandedDescription}
-                            </p>
-                          </div>
-                        )}
-                      </motion.div>
-                    </div>
-                    
-                    <div className="ml-4 flex-shrink-0">
-                      {isExpanded ? (
-                        <ChevronUp className="w-5 h-5 text-gray-400" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-400" />
-                      )}
-                    </div>
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Card className="p-6 bg-gray-900/50 backdrop-blur-lg border-gray-800 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer">
+                    <feature.icon className="w-12 h-12 text-white mb-4" />
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-400">
+                      {feature.description}
+                    </p>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="bg-gray-900/95 backdrop-blur-lg border-gray-800 max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl text-white flex items-center">
+                      <feature.icon className="w-8 h-8 mr-3" />
+                      {feature.title}
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="mt-4">
+                    <p className="text-gray-300 text-base leading-relaxed">
+                      {feature.expandedDescription}
+                    </p>
                   </div>
-                </Card>
-              </motion.div>
-            );
-          })}
+                </DialogContent>
+              </Dialog>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

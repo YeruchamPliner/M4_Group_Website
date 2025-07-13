@@ -12,6 +12,12 @@ A professional B2B SaaS landing page for M4 Development Group, specializing in d
 - **Database**: PostgreSQL with Drizzle ORM (configured but not actively used)
 
 ## Recent Changes
+- **July 13, 2025**: Implemented modal popup windows for service card details instead of inline expansion
+- **July 13, 2025**: Created Projects page with portfolio of 6 sample projects
+- **July 13, 2025**: Added comprehensive Consultation form with contact, project details, and preferences
+- **July 13, 2025**: Connected hero buttons to navigation (Get Free Consultation → /consultation, View Projects → /projects)
+- **July 13, 2025**: Added "What We Offer" section heading with service cards
+- **July 13, 2025**: Increased hero section content size and reduced height to standard viewport
 - **July 13, 2025**: Updated hero background images to focus specifically on nursing and rehabilitation homes from the United States
 - **July 13, 2025**: Implemented responsive navigation with dark theme
 - **July 13, 2025**: Created slideshow hero section with 7-second transitions
