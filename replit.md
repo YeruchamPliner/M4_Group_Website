@@ -12,6 +12,11 @@ A professional B2B SaaS landing page for M4 Development Group, specializing in d
 - **Database**: PostgreSQL with Drizzle ORM (configured but not actively used)
 
 ## Recent Changes
+- **July 13, 2025**: Fixed slideshow image loading issues by updating problematic image URLs
+- **July 13, 2025**: Added background images to "What We Offer" section (construction/development theme)
+- **July 13, 2025**: Added background images to "Our Portfolio" section (healthcare facility theme)
+- **July 13, 2025**: Implemented seamless slideshow transitions without black screens
+- **July 13, 2025**: Fixed duplicate Button import causing build errors
 - **July 13, 2025**: Implemented modal popup windows for service card details instead of inline expansion
 - **July 13, 2025**: Created Projects page with portfolio of 6 sample projects
 - **July 13, 2025**: Added comprehensive Consultation form with contact, project details, and preferences

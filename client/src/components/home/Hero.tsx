@@ -11,8 +11,8 @@ const slides = [
     title: "Nursing Homes"
   },
   {
-    url: "https://images.unsplash.com/photo-1574269909862-7e1d70bb3ed5?auto=format&fit=crop&w=1920&q=80",
-    alt: "American Rehabilitation Center in Colorado",
+    url: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1920&q=80",
+    alt: "American Rehabilitation Center",
     title: "Rehabilitation Centers"
   },
   {
