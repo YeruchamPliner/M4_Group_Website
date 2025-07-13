@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import About from "@/components/home/About";
 import Features from "@/components/home/Features";
 import ProductShowcase from "@/components/home/ProductShowcase";
 
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="bg-black min-h-screen">
       <main>
         <Hero />
+        <About />
         <Features />
         <ProductShowcase />
       </main>
