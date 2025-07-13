@@ -27,8 +27,17 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen bg-black pt-20">
-      <div className="container mx-auto px-6 py-16">
+    <div className="min-h-screen pt-20 relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/75" /> {/* Overlay */}
+        <img
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+          alt="Construction and Development Services"
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div className="container mx-auto px-6 py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

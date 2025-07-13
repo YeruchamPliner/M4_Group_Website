@@ -74,8 +74,17 @@ export default function Projects() {
   });
 
   return (
-    <div className="bg-black min-h-screen pt-32">
-      <div className="container mx-auto px-6 py-12">
+    <div className="min-h-screen pt-32 relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/80" /> {/* Overlay */}
+        <img
+          src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1920&q=80"
+          alt="Healthcare Project Portfolio"
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div className="container mx-auto px-6 py-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
