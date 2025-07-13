@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     url: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern American Nursing Home Facility in New England",
+    alt: "Modern American Nursing Home Facility",
     title: "Nursing Homes"
   },
   {
@@ -16,8 +16,8 @@ const slides = [
     title: "Rehabilitation Centers"
   },
   {
-    url: "https://images.unsplash.com/photo-1566027310447-8d5ee9c2d421?auto=format&fit=crop&w=1920&q=80",
-    alt: "Senior Rehabilitation Facility in California",
+    url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=80",
+    alt: "Senior Care Facility",
     title: "Senior Care"
   },
   {
