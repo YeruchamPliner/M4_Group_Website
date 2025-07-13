@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { MapPin, Calendar, ArrowRight, Building2, Users, Star, ChevronLeft, ChevronRight } from "lucide-react";
@@ -107,13 +108,19 @@ export default function ProductShowcase() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+      const viewport = scrollContainerRef.current.querySelector('[data-radix-scroll-area-viewport]') as HTMLElement;
+      if (viewport) {
+        viewport.scrollBy({ left: -320, behavior: 'smooth' });
+      }
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+      const viewport = scrollContainerRef.current.querySelector('[data-radix-scroll-area-viewport]') as HTMLElement;
+      if (viewport) {
+        viewport.scrollBy({ left: 320, behavior: 'smooth' });
+      }
     }
   };
 
@@ -155,8 +162,8 @@ export default function ProductShowcase() {
             <ChevronRight className="h-5 w-5" />
           </Button>
 
-          <ScrollArea className="w-full whitespace-nowrap">
-            <div ref={scrollContainerRef} className="flex space-x-6 pb-4">
+          <ScrollArea ref={scrollContainerRef} className="w-full whitespace-nowrap">
+            <div className="flex space-x-6 pb-4">
               {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
