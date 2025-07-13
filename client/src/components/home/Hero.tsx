@@ -107,16 +107,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex justify-center items-center"
             >
               <Link href="/consultation">
                 <Button size="lg" className="bg-white text-black hover:bg-gray-100">
                   Get Free Consultation
-                </Button>
-              </Link>
-              <Link href="/projects">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  View Our Projects
                 </Button>
               </Link>
             </motion.div>

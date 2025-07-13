@@ -3,7 +3,6 @@ import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
-import { useState } from "react";
 
 const features = [
   {
