@@ -8,7 +8,7 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
 import Consultation from "@/pages/Consultation";
-import Contact from "@/pages/Contact";
+
 import Navbar from "@/components/Navbar";
 
 function Router() {
@@ -21,7 +21,6 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/projects" component={Projects} />
         <Route path="/consultation" component={Consultation} />
-        <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </>

@@ -51,7 +51,38 @@ export default function Consultation() {
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8">
+          {/* Contact Information Section */}
+          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-white mb-6 flex items-center">
+              <Phone className="w-6 h-6 mr-2" />
+              Contact Information
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Phone className="h-5 w-5 text-yellow-500" />
+                <div>
+                  <p className="font-medium">Phone</p>
+                  <p className="text-gray-400">(555) 123-4567</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Mail className="h-5 w-5 text-yellow-500" />
+                <div>
+                  <p className="font-medium">Email</p>
+                  <p className="text-gray-400">contact@m4development.com</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <MapPin className="h-5 w-5 text-yellow-500" />
+                <div>
+                  <p className="font-medium">Address</p>
+                  <p className="text-gray-400">123 Business Ave, Suite 100</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8"></Card>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">

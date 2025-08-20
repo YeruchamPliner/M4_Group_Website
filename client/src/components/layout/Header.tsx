@@ -48,12 +48,6 @@ export default function Header() {
           <NavLink href="/services" icon={<Hammer className="w-4 h-4" />}>
             Services
           </NavLink>
-          <Link href="/contact">
-            <Button variant="secondary" className="flex items-center space-x-2">
-              <Phone className="w-4 h-4 mr-2" />
-              Contact Us
-            </Button>
-          </Link>
         </nav>
       </div>
     </motion.header>
