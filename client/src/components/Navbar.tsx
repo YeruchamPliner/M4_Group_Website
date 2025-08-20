@@ -27,9 +27,6 @@ export default function Navbar() {
               <span>Get Free Consultation</span>
             </Button>
           </Link>
-          <Link href="/contact">
-            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black text-lg px-6 py-2">Contact Us</Button>
-          </Link>
         </div>
       </div>
     </nav>

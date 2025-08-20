@@ -82,7 +82,7 @@ export default function Consultation() {
             </div>
           </Card>
 
-          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8"></Card>
+          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">
