@@ -13,7 +13,6 @@ export default function Navbar() {
             alt="M4 Development Group Logo" 
             className="h-24 w-auto"
           />
-          <span className="font-bold text-2xl text-white">M4 Development Group</span>
         </Link>
 
         <div className="flex items-center space-x-6">
