@@ -16,7 +16,7 @@ export default function Navbar() {
           <img 
             src="/secondary-logo.jpeg" 
             alt="Secondary Logo" 
-            className="h-28 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
