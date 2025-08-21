@@ -7,10 +7,15 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
       <div className="container mx-auto px-4 h-32 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-4">
           <img 
             src="/new-logo.jpeg" 
             alt="M4 Development Group Logo" 
+            className="h-28 w-auto"
+          />
+          <img 
+            src="/secondary-logo.jpeg" 
+            alt="Secondary Logo" 
             className="h-28 w-auto"
           />
         </Link>
