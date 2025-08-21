@@ -11,7 +11,7 @@ export default function Navbar() {
           <img 
             src="/new-logo.jpeg" 
             alt="M4 Development Group Logo" 
-            className="h-20 w-auto"
+            className="h-28 w-auto"
           />
         </Link>
 
