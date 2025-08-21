@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <img 
-            src="/new-logo.png" 
+            src="/new-logo.jpeg" 
             alt="M4 Development Group Logo" 
             className="h-20 w-auto"
           />
