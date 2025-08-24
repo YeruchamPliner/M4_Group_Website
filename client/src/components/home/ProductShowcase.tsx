@@ -145,7 +145,7 @@ export default function ProductShowcase() {
             Our Portfolio
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore our recent projects showcasing excellence in healthcare facility design and construction across the United States
+            Explore some of our recent projects showcasing excellence in healthcare facility design and construction across the United States
           </p>
         </motion.div>
 
