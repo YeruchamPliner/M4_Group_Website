@@ -77,7 +77,7 @@ export default function About() {
               With over 25 years of combined experience in the Healthcare and Construction Industries, M4 Development Group has established itself as a premier design-build firm specializing in Healthcare Facilities, Commercial Properties, and Multi-Family Residential Projects.
             </p>
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              Our comprehensive approach integrates Architectural design, Engineering, and Construction Services under one roof, ensuring seamless project delivery from initial concept through final completion. We pride ourselves on building long-term relationships with our clients through exceptional quality, attention to detail, value engineering and unwavering commitment to excellence.
+              Our comprehensive approach integrates Architectural design, Engineering, and Construction Services under one roof, ensuring seamless project delivery from initial concept through final completion. We pride ourselves on building long-term relationships with our clients through exceptional quality, attention to detail, value engineering and unwavering commitment to excellence. Whether its a new Ground-Up or Renovation project, M4 can handle it all.
             </p>
             
             {/* Highlights */}
