@@ -6,8 +6,8 @@ import { useInView } from "react-intersection-observer";
 const stats = [
   {
     icon: Building2,
-    number: "200+",
-    label: "Projects Completed"
+    number: "25+",
+    label: "Projects"
   },
   {
     icon: Users,
