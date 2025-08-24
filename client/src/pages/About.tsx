@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { Award, Users, Building2, CheckCircle } from "lucide-react";
 import { useInView } from "react-intersection-observer";
-import Header from "@/components/layout/Header";
 
 const stats = [
   {
@@ -42,8 +41,6 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-20 relative">
-      <Header />
-      
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gray-900/80" /> {/* Overlay */}
