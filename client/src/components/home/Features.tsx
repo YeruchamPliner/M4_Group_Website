@@ -21,7 +21,7 @@ const features = [
     icon: Hammer,
     title: "Construction Excellence",
     description: "Quality construction with attention to detail and craftsmanship",
-    expandedDescription: "Our skilled construction teams deliver superior craftsmanship using the latest techniques and highest quality materials. We maintain strict quality control standards throughout the construction process, ensuring every detail meets or exceeds industry standards. From foundation to finish, we prioritize safety, efficiency, and durability while maintaining open communication with clients throughout the build process."
+    expandedDescription: "Our skilled construction teams deliver superior craftsmanship using the latest techniques and highest quality materials. We maintain strict quality control standards throughout the construction process, ensuring every detail meets or exceeds industry standards. With our proficiency in Healthcare regulation, we ensure you project is compliant with all the changing Healthcare standards and regulations. From foundation to finish, we prioritize safety, efficiency, and durability while maintaining open communication with clients throughout the build process."
   },
   {
     icon: ClipboardCheck,
