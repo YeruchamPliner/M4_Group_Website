@@ -8,8 +8,8 @@ const features = [
   {
     icon: PencilRuler,
     title: "Custom Design",
-    description: "Expert architectural and interior design services tailored to your vision",
-    expandedDescription: "Our design team creates innovative, functional spaces that reflect your unique requirements and aesthetic preferences. We specialize in healthcare facility design, commercial architecture, and multi-family residential projects. Our comprehensive design services include space planning, interior design, accessibility compliance, and sustainable design solutions that enhance both functionality and visual appeal."
+    description: "Tailored architectural solutions that bring your vision to life.",
+    expandedDescription: "Our design team creates innovative, functional spaces that reflect your unique requirements and aesthetic preferences. We specialize in healthcare facility design, commercial architecture, and multi-family residential projects. Our comprehensive design services include space planning, interior design, accessibility compliance, and sustainable design solutions that enhance both functionality and visual appeal. You can either work directly with our Designers or we can work with any Designer of your choosing."
   },
   {
     icon: Building2,
