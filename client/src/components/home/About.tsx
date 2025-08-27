@@ -17,7 +17,7 @@ const stats = [
 ];
 
 const highlights = [
-  "Specialized in nursing and rehabilitation home construction",
+  "Specialized in Nursing Home, ALF and Multi - Family construction",
   "End-to-end design-build solutions",
   "Licensed and bonded across multiple states",
   "Proven track record in healthcare facility development"
