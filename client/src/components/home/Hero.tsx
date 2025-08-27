@@ -18,9 +18,9 @@ const slides = [
     title: "Commercial Excellence"
   },
   {
-    url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80",
-    alt: "State-of-the-Art Medical Center",
-    title: "Medical Centers"
+    url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80",
+    alt: "Construction Site Building Development",
+    title: "Construction Excellence"
   },
   {
     url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1920&q=80",
