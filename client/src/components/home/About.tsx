@@ -81,61 +81,56 @@ export default function About() {
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 gap-8"
+            className="space-y-8"
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="text-center p-6 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700"
-              >
-                <stat.icon className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-                <div className="text-3xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400 text-sm">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* States of Operation Pictogram */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 flex justify-center"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className="text-center p-6 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700 w-64"
-          >
-            <div className="w-12 h-12 mx-auto mb-4">
-              <svg className="w-full h-full text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <div className="text-3xl font-bold text-white mb-2">
-              9 States
-            </div>
-            <div className="text-gray-400 text-sm mb-3">
-              States of Operation
-            </div>
-            <div className="flex flex-wrap justify-center gap-2 text-xs">
-              {["NY", "NJ", "IL", "AL", "MS", "FL", "LA", "IA", "KY"].map((state, index) => (
-                <span key={state} className="bg-yellow-500/20 text-yellow-500 px-2 py-1 rounded">
-                  {state}
-                </span>
+            <div className="grid grid-cols-2 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  className="text-center p-6 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700"
+                >
+                  <stat.icon className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+                  <div className="text-3xl font-bold text-white mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-400 text-sm">
+                    {stat.label}
+                  </div>
+                </motion.div>
               ))}
             </div>
+            
+            {/* States of Operation Pictogram - positioned below the other two */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-center p-6 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700"
+            >
+              <div className="w-12 h-12 mx-auto mb-4">
+                <svg className="w-full h-full text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div className="text-3xl font-bold text-white mb-2">
+                9 States
+              </div>
+              <div className="text-gray-400 text-sm mb-3">
+                States of Operation
+              </div>
+              <div className="flex flex-wrap justify-center gap-2 text-xs">
+                {["NY", "NJ", "IL", "AL", "MS", "FL", "LA", "IA", "KY"].map((state, index) => (
+                  <span key={state} className="bg-yellow-500/20 text-yellow-500 px-2 py-1 rounded">
+                    {state}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
