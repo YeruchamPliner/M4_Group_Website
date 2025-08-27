@@ -5,19 +5,9 @@ import { Award, Users, Building2, CheckCircle } from "lucide-react";
 
 const stats = [
   {
-    icon: Building2,
-    number: "25+",
-    label: "Projects"
-  },
-  {
     icon: Users,
     number: "25+",
     label: "Years Experience"
-  },
-  {
-    icon: Award,
-    number: "50+",
-    label: "Healthcare Facilities"
   },
   {
     icon: CheckCircle,
