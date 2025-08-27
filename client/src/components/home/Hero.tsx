@@ -23,9 +23,9 @@ const slides = [
     title: "Construction Excellence"
   },
   {
-    url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern Assisted Living Facility",
-    title: "Assisted Living"
+    url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80",
+    alt: "Modern Multi-Family Home in US",
+    title: "Multi-Family Homes"
   },
   {
     url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
