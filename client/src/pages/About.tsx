@@ -114,11 +114,40 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Additional Content Section */}
+        {/* States of Operation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-24 text-center"
+        >
+          <h2 className="text-3xl font-bold text-white mb-8">States of Operation</h2>
+          <div className="flex flex-wrap justify-center items-center gap-6 max-w-4xl mx-auto mb-8">
+            {["NY", "NJ", "IL", "AL", "MS", "FL", "LA", "IA", "KY"].map((state, index) => (
+              <motion.div
+                key={state}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                className="flex flex-col items-center p-4 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700 hover:bg-gray-800/70 transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mb-2">
+                  <span className="text-yellow-500 font-bold text-lg">{state}</span>
+                </div>
+                <span className="text-gray-300 text-sm font-medium">{state}</span>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            We are licensed and bonded to operate across multiple states, bringing our expertise in healthcare facility construction nationwide.
+          </p>
+        </motion.div>
+
+        {/* Mission Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-24 text-center"
         >
           <h2 className="text-3xl font-bold text-white mb-8">Our Mission</h2>
