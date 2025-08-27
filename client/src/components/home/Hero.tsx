@@ -13,9 +13,9 @@ import { User, Mail, Phone, Building, MapPin, Calendar, MessageSquare, DollarSig
 
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern American Healthcare Facility",
-    title: "Healthcare Excellence"
+    url: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=80",
+    alt: "Beautiful Modern Buildings in US",
+    title: "Architectural Excellence"
   },
   {
     url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80",
