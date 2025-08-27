@@ -18,7 +18,7 @@ const stats = [
 
 const highlights = [
   "Specialized in Nursing Home, ALF and Multi-Family construction",
-  "End-to-end design-build solutions",
+  "End-to-End Design-Build solutions",
   "Full Service Nationwide Construction & Management Firm",
   "Proven track record in healthcare facility development"
 ];
