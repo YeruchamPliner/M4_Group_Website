@@ -13,29 +13,29 @@ import { User, Mail, Phone, Building, MapPin, Calendar, MessageSquare, DollarSig
 
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern American Nursing Home Facility",
-    title: "Nursing Homes"
+    url: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=1920&q=80",
+    alt: "Modern American Healthcare Facility",
+    title: "Healthcare Excellence"
   },
   {
-    url: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1920&q=80",
-    alt: "American Rehabilitation Center",
-    title: "Rehabilitation Centers"
+    url: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1920&q=80",
+    alt: "State-of-the-Art Medical Center",
+    title: "Medical Centers"
   },
   {
-    url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=80",
-    alt: "Senior Care Facility",
-    title: "Senior Care"
+    url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1920&q=80",
+    alt: "Modern Assisted Living Facility",
+    title: "Assisted Living"
   },
   {
-    url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern American Commercial Building",
-    title: "Commercial"
+    url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
+    alt: "Contemporary Commercial Development",
+    title: "Commercial Projects"
   },
   {
-    url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern American Multi-Family Housing",
-    title: "Multi-Family"
+    url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80",
+    alt: "Premium Residential Complex",
+    title: "Residential Development"
   }
 ];
 
