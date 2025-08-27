@@ -103,33 +103,38 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* States of Operation */}
+        {/* States of Operation Pictogram */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-24 text-center"
+          className="mt-16 flex justify-center"
         >
-          <h3 className="text-3xl font-bold text-white mb-8">States of Operation</h3>
-          <div className="flex flex-wrap justify-center items-center gap-6 max-w-4xl mx-auto">
-            {["NY", "NJ", "IL", "AL", "MS", "FL", "LA", "IA", "KY"].map((state, index) => (
-              <motion.div
-                key={state}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
-                className="flex flex-col items-center p-4 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700 hover:bg-gray-800/70 transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-yellow-500 font-bold text-lg">{state}</span>
-                </div>
-                <span className="text-gray-300 text-sm font-medium">{state}</span>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            We are licensed and bonded to operate across multiple states, bringing our expertise in healthcare facility construction nationwide.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="text-center p-6 bg-gray-800/50 backdrop-blur-lg rounded-lg border border-gray-700 w-64"
+          >
+            <div className="w-12 h-12 mx-auto mb-4">
+              <svg className="w-full h-full text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div className="text-3xl font-bold text-white mb-2">
+              9 States
+            </div>
+            <div className="text-gray-400 text-sm mb-3">
+              States of Operation
+            </div>
+            <div className="flex flex-wrap justify-center gap-2 text-xs">
+              {["NY", "NJ", "IL", "AL", "MS", "FL", "LA", "IA", "KY"].map((state, index) => (
+                <span key={state} className="bg-yellow-500/20 text-yellow-500 px-2 py-1 rounded">
+                  {state}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
