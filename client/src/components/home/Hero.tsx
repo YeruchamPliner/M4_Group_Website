@@ -137,7 +137,7 @@ export default function Hero() {
               <Dialog>
                 <DialogTrigger asChild>
                   <Button size="lg" className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold">
-                    Get Free Consultation
+                    Get a Free Consultation
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="bg-gray-900/95 backdrop-blur-lg border-gray-800 max-w-4xl max-h-[90vh] overflow-y-auto">
