@@ -28,11 +28,6 @@ const slides = [
     title: "Multi-Family Homes"
   },
   {
-    url: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern Nursing Home Facility in US",
-    title: "Nursing Home Excellence"
-  },
-  {
     url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80",
     alt: "Premium Residential Complex",
     title: "Residential Development"
