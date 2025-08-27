@@ -55,7 +55,7 @@ export default function Consultation() {
           <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8 mb-8">
             <h2 className="text-2xl font-semibold text-white mb-6 flex items-center">
               <Phone className="w-6 h-6 mr-2" />
-              Contact Information
+              Contact Us
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-center space-x-3 text-gray-300">
