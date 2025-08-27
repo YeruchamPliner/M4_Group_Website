@@ -18,7 +18,7 @@ const slides = [
     title: "Healthcare Excellence"
   },
   {
-    url: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1920&q=80",
+    url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80",
     alt: "State-of-the-Art Medical Center",
     title: "Medical Centers"
   },
