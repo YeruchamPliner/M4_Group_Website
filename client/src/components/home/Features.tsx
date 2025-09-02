@@ -15,7 +15,7 @@ const features = [
     icon: Building2,
     title: "Development Planning",
     description: "Comprehensive project planning and development strategy",
-    expandedDescription: "From initial concept to final execution, our development planning services ensure your project meets all regulatory requirements, stays within budget, and delivers on schedule. We handle site analysis, feasibility studies, permitting, zoning compliance, and coordinate with local authorities to streamline the approval process. Our experienced team anticipates challenges and develops strategic solutions before they become problems."
+    expandedDescription: "From initial concept to final execution, our development planning services ensure your project meets all regulatory requirements, stays within budget, and delivers on schedule. We handle site analysis, feasibility studies, permitting, zoning compliance, and coordinate with local authorities to streamline the approval process. Our experienced team anticipates challenges and develops strategic solutions before they become problems. We work directly with your internal team to maintain uninterrupted facility operations throughout the project."
   },
   {
     icon: Hammer,
