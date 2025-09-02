@@ -7,27 +7,27 @@ import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
 const services = [
   {
     icon: PencilRuler,
-    title: "Custom Design",
+    title: "Architectural Custom Design",
     description: "Tailored architectural solutions that bring your vision to life.",
-    expandedDescription: "Our design team creates innovative, functional spaces that reflect your unique requirements and aesthetic preferences. We specialize in healthcare facility design, commercial architecture, and multi-family residential projects. Our comprehensive design services include space planning, interior design, accessibility compliance, and sustainable design solutions that enhance both functionality and visual appeal. You can either work directly with our Designers or we can work with any Designer of your choosing."
+    expandedDescription: "Our design team creates innovative, functional spaces that reflect your unique requirements and aesthetic preferences. We specialize in Healthcare facility design, Commercial architecture, and Multi-Family residential projects. Our comprehensive design services include space planning, interior design, ADA compliance, and sustainable design solutions that enhance both functionality and visual appeal. You can either work directly with our designers or we can work with any designer of your choosing."
   },
   {
     icon: Building2,
     title: "Development Planning",
-    description: "Strategic planning and development services for successful project execution.",
-    expandedDescription: "From initial concept to final execution, our development planning services ensure your project meets all regulatory requirements, stays within budget, and delivers on schedule. We handle site analysis, feasibility studies, permitting, zoning compliance, and coordinate with local authorities to streamline the approval process. Our experienced team anticipates challenges and develops strategic solutions before they become problems."
+    description: "Comprehensive project planning and development strategy",
+    expandedDescription: "From initial concept to final execution, our development planning services ensure your project meets all regulatory requirements, stays within budget, and delivers on schedule. We handle site analysis, feasibility studies, permitting, zoning compliance, and coordinate with local authorities to streamline the approval process. Our experienced team anticipates challenges and develops strategic solutions before they become problems. We work directly with your internal team to maintain uninterrupted facility operations throughout the project."
   },
   {
     icon: Hammer,
     title: "Construction Excellence",
-    description: "High-quality construction services with meticulous attention to detail.",
+    description: "Quality construction with attention to detail and craftsmanship",
     expandedDescription: "Our skilled construction teams deliver superior craftsmanship using the latest techniques and highest quality materials. We maintain strict quality control standards throughout the construction process, ensuring every detail meets or exceeds industry standards. With our proficiency in Healthcare regulation, we ensure you project is compliant with all the changing Healthcare standards and regulations. From foundation to finish, we prioritize safety, efficiency, and durability while maintaining open communication with clients throughout the build process."
   },
   {
     icon: ClipboardCheck,
     title: "Project Management",
-    description: "End-to-end project oversight ensuring timely completion.",
-    expandedDescription: "Our certified project managers coordinate every aspect of your build, from initial planning through final inspection. We provide regular progress updates, manage subcontractor schedules, monitor budgets, and ensure quality standards are maintained. Our proactive approach to project management minimizes delays and keeps your project on track while maintaining clear communication channels throughout the entire process."
+    description: "End-to-end project oversight ensuring timely completion",
+    expandedDescription: "Our certified project managers coordinate every aspect of your project, from initial planning through final inspection. We provide regular progress updates, manage subcontractor schedules, monitor budgets, and ensure quality standards are maintained. Our proactive approach to project management minimizes delays and keeps your project on track while maintaining clear communication channels throughout the entire process."
   }
 ];
 
