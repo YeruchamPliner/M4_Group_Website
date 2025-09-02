@@ -33,10 +33,6 @@ export default function Contact() {
                     <Mail className="h-5 w-5" />
                     <span>contact@m4development.com</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-gray-400">
-                    <MapPin className="h-5 w-5" />
-                    <span>123 Business Ave, Suite 100</span>
-                  </div>
                 </div>
                 <Button className="mt-6 bg-yellow-600 text-black hover:bg-yellow-500 font-semibold" size="lg">
                   Schedule a Consultation
