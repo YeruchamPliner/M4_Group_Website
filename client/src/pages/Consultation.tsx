@@ -23,7 +23,7 @@ export default function Consultation() {
     preferredContact: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -32,26 +32,39 @@ export default function Consultation() {
       return;
     }
     
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    
-    // Show success message
-    alert("Thank you for your consultation request! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.");
-    
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      company: "",
-      projectType: "",
-      location: "",
-      budget: "",
-      timeline: "",
-      description: "",
-      preferredContact: ""
-    });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Thank you for your consultation request! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.");
+        
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          company: "",
+          projectType: "",
+          location: "",
+          budget: "",
+          timeline: "",
+          description: "",
+          preferredContact: ""
+        });
+      } else {
+        alert("There was an error submitting your form. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert("There was an error submitting your form. Please try again.");
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
