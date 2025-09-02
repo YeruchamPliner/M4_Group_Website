@@ -60,9 +60,33 @@ export default function Hero() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+      alert("Please fill in all required fields (First Name, Last Name, and Email)");
+      return;
+    }
+
+    // Simulate form submission
     console.log("Form submitted:", formData);
-    // You can add success notification here
+
+    // Show success message
+    alert("Thank you for your consultation request! We will contact you within 24 hours to schedule your free consultation.");
+
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      projectType: "",
+      location: "",
+      budget: "",
+      timeline: "",
+      description: "",
+      preferredContact: ""
+    });
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -146,7 +170,7 @@ export default function Hero() {
                       Free Consultation
                     </DialogTitle>
                   </DialogHeader>
-                  
+
                   <div className="max-w-4xl mx-auto">
                     <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8">
                       <form onSubmit={handleSubmit} className="space-y-6">
@@ -156,7 +180,7 @@ export default function Hero() {
                             <Mail className="w-6 h-6 mr-2" />
                             Contact Information
                           </h2>
-                          
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                               <Label htmlFor="firstName" className="text-gray-300">First Name *</Label>
@@ -168,7 +192,7 @@ export default function Hero() {
                                 required
                               />
                             </div>
-                            
+
                             <div className="space-y-2">
                               <Label htmlFor="lastName" className="text-gray-300">Last Name *</Label>
                               <Input
@@ -180,7 +204,7 @@ export default function Hero() {
                               />
                             </div>
                           </div>
-                          
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                               <Label htmlFor="email" className="text-gray-300">Email Address *</Label>
@@ -193,7 +217,7 @@ export default function Hero() {
                                 required
                               />
                             </div>
-                            
+
                             <div className="space-y-2">
                               <Label htmlFor="phone" className="text-gray-300">Phone Number</Label>
                               <Input
@@ -213,7 +237,7 @@ export default function Hero() {
                             <Building className="w-6 h-6 mr-2" />
                             Project Details
                           </h2>
-                          
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                               <Label htmlFor="company" className="text-gray-300">Company/Organization</Label>
@@ -224,7 +248,7 @@ export default function Hero() {
                                 className="bg-gray-800 border-gray-700 text-white"
                               />
                             </div>
-                            
+
                             <div className="space-y-2">
                               <Label htmlFor="projectType" className="text-gray-300">Project Type *</Label>
                               <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
@@ -243,7 +267,7 @@ export default function Hero() {
                               </Select>
                             </div>
                           </div>
-                          
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                               <Label htmlFor="location" className="text-gray-300">Project Location</Label>
@@ -255,7 +279,7 @@ export default function Hero() {
                                 placeholder="City, State"
                               />
                             </div>
-                            
+
                             <div className="space-y-2">
                               <Label htmlFor="budget" className="text-gray-300">Estimated Budget</Label>
                               <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
@@ -273,7 +297,7 @@ export default function Hero() {
                               </Select>
                             </div>
                           </div>
-                          
+
                           <div className="space-y-2">
                             <Label htmlFor="timeline" className="text-gray-300">Project Timeline</Label>
                             <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
@@ -289,7 +313,7 @@ export default function Hero() {
                               </SelectContent>
                             </Select>
                           </div>
-                          
+
                           <div className="space-y-2">
                             <Label htmlFor="description" className="text-gray-300">Project Description</Label>
                             <Textarea
@@ -308,7 +332,7 @@ export default function Hero() {
                             <Calendar className="w-6 h-6 mr-2" />
                             Consultation Preferences
                           </h2>
-                          
+
                           <div className="space-y-2">
                             <Label htmlFor="preferredContact" className="text-gray-300">Preferred Contact Method</Label>
                             <Select value={formData.preferredContact} onValueChange={(value) => handleInputChange("preferredContact", value)}>

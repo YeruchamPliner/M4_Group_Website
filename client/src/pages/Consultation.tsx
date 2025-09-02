@@ -25,8 +25,33 @@ export default function Consultation() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.projectType || !formData.location) {
+      alert("Please fill in all required fields marked with *");
+      return;
+    }
+    
+    // Simulate form submission
     console.log("Form submitted:", formData);
+    
+    // Show success message
+    alert("Thank you for your consultation request! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.");
+    
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      projectType: "",
+      location: "",
+      budget: "",
+      timeline: "",
+      description: "",
+      preferredContact: ""
+    });
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -72,13 +97,7 @@ export default function Consultation() {
                   <p className="text-gray-400">contact@m4development.com</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <MapPin className="h-5 w-5 text-yellow-500" />
-                <div>
-                  <p className="font-medium">Address</p>
-                  <p className="text-gray-400">123 Business Ave, Suite 100</p>
-                </div>
-              </div>
+              
             </div>
           </Card>
 
