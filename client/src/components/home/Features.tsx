@@ -27,7 +27,7 @@ const features = [
     icon: ClipboardCheck,
     title: "Project Management",
     description: "End-to-end project oversight ensuring timely completion",
-    expandedDescription: "Our certified project managers coordinate every aspect of your build, from initial planning through final inspection. We provide regular progress updates, manage subcontractor schedules, monitor budgets, and ensure quality standards are maintained. Our proactive approach to project management minimizes delays and keeps your project on track while maintaining clear communication channels throughout the entire process."
+    expandedDescription: "Our certified project managers coordinate every aspect of your project, from initial planning through final inspection. We provide regular progress updates, manage subcontractor schedules, monitor budgets, and ensure quality standards are maintained. Our proactive approach to project management minimizes delays and keeps your project on track while maintaining clear communication channels throughout the entire process."
   }
 ];
 
