@@ -8,7 +8,7 @@ const services = [
   {
     icon: PencilRuler,
     title: "Architectural Custom Design",
-    description: "Tailored architectural solutions that bring your vision to life.",
+    description: "Custom architectural solutions, space planning that blend form and function",
     expandedDescription: "Our design team creates innovative, functional spaces that reflect your unique requirements and aesthetic preferences. We specialize in Healthcare facility design, Commercial architecture, and Multi-Family residential projects. Our comprehensive design services include space planning, interior design, ADA compliance, and sustainable design solutions that enhance both functionality and visual appeal. You can either work directly with our designers or we can work with any designer of your choosing."
   },
   {
