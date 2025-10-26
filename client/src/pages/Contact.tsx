@@ -26,10 +26,6 @@ export default function Contact() {
                 <h2 className="text-2xl font-semibold text-white mb-6">Contact Us</h2>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-gray-400">
-                    <Phone className="h-5 w-5" />
-                    <span>(555) 123-4567</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-400">
                     <Mail className="h-5 w-5" />
                     <span>contact@m4development.com</span>
                   </div>
