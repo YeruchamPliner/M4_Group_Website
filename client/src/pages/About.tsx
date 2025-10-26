@@ -127,7 +127,7 @@ export default function About() {
                 </svg>
               </div>
               <div className="text-3xl font-bold text-white mb-2">
-                9 States
+                Nationwide
               </div>
               <div className="text-gray-400 text-sm mb-3">
                 States of Operation
