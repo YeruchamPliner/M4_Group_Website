@@ -116,7 +116,7 @@ export default function About() {
                 Nationwide
               </div>
               <div className="text-gray-400 text-sm mb-3">
-                States of Operation
+                Currently operating in:
               </div>
               <div className="flex flex-wrap justify-center gap-2 text-xs">
                 {["NY", "NJ", "IL", "AL", "MS", "FL", "LA", "IA", "KY"].map((state, index) => (
