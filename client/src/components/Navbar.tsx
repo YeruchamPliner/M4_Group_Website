@@ -24,7 +24,7 @@ export default function Navbar() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/services">Services</NavLink>
-          <NavLink href="/projects">Projects</NavLink>
+          <NavLink href="/gallery">Gallery</NavLink>
           <Link href="/consultation">
             <Button variant="default" className="bg-yellow-600 text-black hover:bg-yellow-500 text-lg px-6 py-2 font-semibold flex items-center space-x-2">
               <Calendar className="w-4 h-4" />
