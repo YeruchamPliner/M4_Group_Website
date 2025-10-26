@@ -93,22 +93,12 @@ export default function Consultation() {
               <Phone className="w-6 h-6 mr-2" />
               Contact Us
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Phone className="h-5 w-5 text-yellow-500" />
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <p className="text-gray-400">(555) 123-4567</p>
-                </div>
+            <div className="flex items-center space-x-3 text-gray-300">
+              <Mail className="h-5 w-5 text-yellow-500" />
+              <div>
+                <p className="font-medium">Email</p>
+                <p className="text-gray-400">contact@m4development.com</p>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="h-5 w-5 text-yellow-500" />
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-gray-400">contact@m4development.com</p>
-                </div>
-              </div>
-              
             </div>
           </Card>
 
