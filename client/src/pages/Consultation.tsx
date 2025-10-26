@@ -97,7 +97,7 @@ export default function Consultation() {
               <Mail className="h-5 w-5 text-yellow-500" />
               <div>
                 <p className="font-medium">Email</p>
-                <p className="text-gray-400">contact@m4development.com</p>
+                <p className="text-gray-400">marv@them4group.com</p>
               </div>
             </div>
           </Card>
