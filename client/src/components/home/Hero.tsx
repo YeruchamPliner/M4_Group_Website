@@ -10,27 +10,67 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { User, Mail, Phone, Building, MapPin, Calendar, MessageSquare, DollarSign, Clock } from "lucide-react";
+import img1 from "../../assets/20230919_115117_1761449206238.jpg";
+import img2 from "../../assets/IMG-20240801-WA0036_1761449206239.jpg";
+import img3 from "../../assets/IMG-20241209-WA0118_1761449206240.jpg";
+import img4 from "../../assets/IMG-20240801-WA0016_1761449206240.jpg";
+import img5 from "../../assets/IMG-20240801-WA0020_1761449206241.jpg";
+import img6 from "../../assets/IMG_6409_1761449206242.webp";
+import img7 from "../../assets/IMG-20240321-WA0057_1761449206243.jpg";
+import img8 from "../../assets/20240730_112919_1761449206244.jpg";
+import img9 from "../../assets/20240416_164013_1761449206245.jpg";
+import img10 from "../../assets/20240730_112659_1761449206246.jpg";
 
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern Commercial Buildings",
-    title: "Commercial Excellence"
+    url: img1,
+    alt: "Modern Dining and Community Area",
+    title: "Community Excellence"
   },
   {
-    url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80",
-    alt: "Construction Site Building Development",
-    title: "Construction Excellence"
+    url: img2,
+    alt: "Rehabilitation and Therapy Room",
+    title: "Healthcare Excellence"
   },
   {
-    url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80",
-    alt: "Modern Multi-Family Home in US",
-    title: "Multi-Family Homes"
+    url: img3,
+    alt: "Contemporary Dining Space",
+    title: "Quality Interiors"
   },
   {
-    url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80",
-    alt: "Premium Residential Complex",
-    title: "Residential Development"
+    url: img4,
+    alt: "Elegant Dining Room Design",
+    title: "Comfort & Style"
+  },
+  {
+    url: img5,
+    alt: "Accessible Bathroom Facilities",
+    title: "Accessible Design"
+  },
+  {
+    url: img6,
+    alt: "Modern Patient Room",
+    title: "Patient Comfort"
+  },
+  {
+    url: img7,
+    alt: "Comfortable Resident Room",
+    title: "Resident Care"
+  },
+  {
+    url: img8,
+    alt: "Spacious Patient Accommodation",
+    title: "Quality Care Spaces"
+  },
+  {
+    url: img9,
+    alt: "Professional Reception Area",
+    title: "Welcoming Spaces"
+  },
+  {
+    url: img10,
+    alt: "Medical Workspace and Nursing Station",
+    title: "Efficient Workspaces"
   }
 ];
 
