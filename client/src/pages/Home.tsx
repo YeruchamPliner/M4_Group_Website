@@ -1,7 +1,6 @@
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Features from "@/components/home/Features";
-import ProductShowcase from "@/components/home/ProductShowcase";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
         <Hero />
         <About />
         <Features />
-        <ProductShowcase />
       </main>
     </div>
   );
