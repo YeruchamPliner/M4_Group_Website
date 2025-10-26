@@ -7,7 +7,6 @@ import img2 from "../assets/IMG-20240801-WA0036_1761449206239.jpg";
 import img3 from "../assets/IMG-20241209-WA0118_1761449206240.jpg";
 import img4 from "../assets/IMG-20240801-WA0016_1761449206240.jpg";
 import img5 from "../assets/IMG-20240801-WA0020_1761449206241.jpg";
-import img6 from "../assets/IMG_6409_1761449206242.webp";
 import img7 from "../assets/IMG-20240321-WA0057_1761449206243.jpg";
 import img8 from "../assets/20240730_112919_1761449206244.jpg";
 import img9 from "../assets/20240416_164013_1761449206245.jpg";
@@ -46,30 +45,24 @@ const galleryImages = [
   },
   {
     id: 6,
-    url: img6,
-    title: "Modern Patient Room",
-    description: "Comfortable patient accommodation with modern amenities"
-  },
-  {
-    id: 7,
     url: img7,
     title: "Comfortable Resident Room",
     description: "Welcoming resident room designed for comfort and care"
   },
   {
-    id: 8,
+    id: 7,
     url: img8,
     title: "Spacious Patient Accommodation",
     description: "Well-appointed patient room with ample space and natural light"
   },
   {
-    id: 9,
+    id: 8,
     url: img9,
     title: "Professional Reception Area",
     description: "Welcoming reception area with modern design and functionality"
   },
   {
-    id: 10,
+    id: 9,
     url: img10,
     title: "Medical Workspace and Nursing Station",
     description: "Efficient nursing station with comprehensive workspace"
