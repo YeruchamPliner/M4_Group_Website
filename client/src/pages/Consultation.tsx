@@ -13,7 +13,6 @@ export default function Consultation() {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
     company: "",
     projectType: "",
     location: "",
@@ -27,7 +26,7 @@ export default function Consultation() {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.projectType || !formData.location) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.projectType || !formData.location) {
       alert("Please fill in all required fields marked with *");
       return;
     }
@@ -49,7 +48,6 @@ export default function Consultation() {
           firstName: "",
           lastName: "",
           email: "",
-          phone: "",
           company: "",
           projectType: "",
           location: "",
@@ -147,30 +145,16 @@ export default function Consultation() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-300">Email Address *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      className="bg-gray-800 border-gray-700 text-white"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-gray-300">Phone Number *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="bg-gray-800 border-gray-700 text-white"
-                      required
-                    />
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-gray-300">Email Address *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="bg-gray-800 border-gray-700 text-white"
+                    required
+                  />
                 </div>
 
                 <div className="space-y-2">
