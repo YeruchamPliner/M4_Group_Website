@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import img1 from "../assets/20230919_115117_1761449206238.jpg";
 import img2 from "../assets/IMG-20240801-WA0036_1761449206239.jpg";
 import img3 from "../assets/IMG-20241209-WA0118_1761449206240.jpg";
@@ -217,40 +218,27 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const thumbnailContainerRef = useRef<HTMLDivElement>(null);
-  const thumbnailRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const nextSlide = () => {
-    setCurrentIndex((current) => (current + 1) % galleryImages.length);
+  const openImage = (index: number) => {
+    setSelectedIndex(index);
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((current) => (current - 1 + galleryImages.length) % galleryImages.length);
+  const closeImage = () => {
+    setSelectedIndex(null);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  useEffect(() => {
-    if (thumbnailContainerRef.current && thumbnailRefs.current[currentIndex]) {
-      const container = thumbnailContainerRef.current;
-      const thumbnail = thumbnailRefs.current[currentIndex];
-      
-      if (thumbnail) {
-        const containerWidth = container.offsetWidth;
-        const thumbnailLeft = thumbnail.offsetLeft;
-        const thumbnailWidth = thumbnail.offsetWidth;
-        const scrollLeft = thumbnailLeft - (containerWidth / 2) + (thumbnailWidth / 2);
-        
-        container.scrollTo({
-          left: scrollLeft,
-          behavior: 'smooth'
-        });
-      }
+  const nextImage = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % galleryImages.length);
     }
-  }, [currentIndex]);
+  };
+
+  const prevImage = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length);
+    }
+  };
 
   return (
     <div className="min-h-screen pt-32 bg-black">
@@ -269,88 +257,92 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        {/* Main Carousel */}
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            {/* Image Container */}
-            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-gray-900">
-              <motion.img
-                key={currentIndex}
-                src={galleryImages[currentIndex].url}
-                alt={galleryImages[currentIndex].title}
-                className="w-full h-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              />
-              
-              {/* Navigation Arrows */}
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12"
-                data-testid="button-prev-image"
-              >
-                <ChevronLeft className="w-8 h-8" />
-              </Button>
-              
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12"
-                data-testid="button-next-image"
-              >
-                <ChevronRight className="w-8 h-8" />
-              </Button>
-
-              {/* Image Info Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="text-2xl font-semibold text-white mb-2">
-                  {galleryImages[currentIndex].title}
-                </h3>
-                <p className="text-gray-300">
-                  {galleryImages[currentIndex].description}
-                </p>
-              </div>
-
-              {/* Counter */}
-              <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-                {currentIndex + 1} / {galleryImages.length}
-              </div>
-            </div>
-
-            {/* Thumbnail Navigation */}
-            <div 
-              ref={thumbnailContainerRef}
-              className="mt-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900"
-              style={{ scrollbarWidth: 'thin' }}
+        {/* Grid Layout */}
+        <div className="grid grid-cols-5 gap-4 max-w-7xl mx-auto">
+          {galleryImages.map((image, index) => (
+            <motion.button
+              key={image.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.02 }}
+              onClick={() => openImage(index)}
+              className="aspect-square overflow-hidden rounded-lg border-2 border-gray-800 hover:border-yellow-500 transition-all duration-300 hover:scale-105 group cursor-pointer"
+              data-testid={`gallery-image-${index}`}
             >
-              <div className="flex gap-3 pb-4 min-w-min px-2">
-                {galleryImages.map((image, index) => (
-                  <button
-                    key={image.id}
-                    ref={(el) => thumbnailRefs.current[index] = el}
-                    onClick={() => goToSlide(index)}
-                    className={`flex-shrink-0 w-24 h-24 overflow-hidden rounded-lg border-3 transition-all duration-300 ${
-                      index === currentIndex
-                        ? 'border-yellow-500 opacity-100 scale-110 ring-2 ring-yellow-500 ring-offset-2 ring-offset-black'
-                        : 'border-gray-700 opacity-60 hover:opacity-90 hover:border-gray-500 hover:scale-105'
-                    }`}
-                    data-testid={`thumbnail-${index}`}
-                  >
-                    <img
-                      src={image.url}
-                      alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+              <img
+                src={image.url}
+                alt={image.title}
+                className="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
+              />
+            </motion.button>
+          ))}
         </div>
+
+        {/* Modal/Lightbox */}
+        <Dialog open={selectedIndex !== null} onOpenChange={(open) => !open && closeImage()}>
+          <DialogContent className="max-w-7xl w-full h-[90vh] bg-black/95 border-gray-800 p-0">
+            {selectedIndex !== null && (
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Close Button */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={closeImage}
+                  className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12"
+                  data-testid="button-close-modal"
+                >
+                  <X className="w-8 h-8" />
+                </Button>
+
+                {/* Image Counter */}
+                <div className="absolute top-4 left-4 z-50 bg-black/50 backdrop-blur-sm text-white px-6 py-3 rounded-full text-lg font-medium">
+                  {selectedIndex + 1} / {galleryImages.length}
+                </div>
+
+                {/* Main Image */}
+                <div className="relative w-full h-full flex items-center justify-center p-20">
+                  <img
+                    src={galleryImages[selectedIndex].url}
+                    alt={galleryImages[selectedIndex].title}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+
+                {/* Previous Button */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 z-50"
+                  data-testid="button-prev-modal"
+                >
+                  <ChevronLeft className="w-10 h-10" />
+                </Button>
+
+                {/* Next Button */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 z-50"
+                  data-testid="button-next-modal"
+                >
+                  <ChevronRight className="w-10 h-10" />
+                </Button>
+
+                {/* Image Info */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
+                  <h3 className="text-2xl font-semibold text-white mb-2">
+                    {galleryImages[selectedIndex].title}
+                  </h3>
+                  <p className="text-gray-300 text-lg">
+                    {galleryImages[selectedIndex].description}
+                  </p>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
