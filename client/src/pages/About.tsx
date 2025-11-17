@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Building2, CheckCircle } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import aboutBg from "../assets/20230919_115117_1761449206238.jpg";
 
 const stats = [
   {
@@ -35,8 +36,8 @@ export default function About() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gray-900/80" /> {/* Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80"
-          alt="M4 Development Group Team"
+          src={aboutBg}
+          alt="Modern Dining and Community Area"
           className="object-cover w-full h-full"
         />
       </div>

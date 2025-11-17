@@ -11,6 +11,7 @@ import img7 from "../assets/IMG-20240321-WA0057_1761449206243.jpg";
 import img8 from "../assets/20240730_112919_1761449206244.jpg";
 import img9 from "../assets/20240416_164013_1761449206245.jpg";
 import img10 from "../assets/20240730_112659_1761449206246.jpg";
+import img11 from "../assets/20240730_112608_1763384881743.jpg";
 
 const galleryImages = [
   {
@@ -66,6 +67,12 @@ const galleryImages = [
     url: img10,
     title: "Medical Workspace and Nursing Station",
     description: "Efficient nursing station with comprehensive workspace"
+  },
+  {
+    id: 10,
+    url: img11,
+    title: "Modern Nursing Station and Reception",
+    description: "State-of-the-art nursing station with elegant design and modern fixtures"
   }
 ];
 
