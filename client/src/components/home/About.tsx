@@ -34,7 +34,7 @@ export default function About() {
     <section ref={ref} className="py-24 relative">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gray-900/40" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-gray-900/60" /> {/* Overlay */}
         <img
           src={aboutBg}
           alt="Aerial View of Construction Site Foundation"
