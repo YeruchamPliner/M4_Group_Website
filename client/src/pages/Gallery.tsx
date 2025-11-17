@@ -365,7 +365,7 @@ export default function Gallery() {
 
         {/* Modal/Lightbox */}
         <Dialog open={selectedIndex !== null} onOpenChange={(open) => !open && closeImage()}>
-          <DialogContent className="max-w-[95vw] w-full max-h-[95vh] bg-black/95 border-gray-800 p-0 overflow-hidden">
+          <DialogContent className="max-w-[100vw] w-full max-h-[100vh] h-[100vh] bg-black/95 border-gray-800 p-0 overflow-hidden">
             <VisuallyHidden>
               <DialogTitle>
                 {selectedIndex !== null ? galleryImages[selectedIndex].title : "Gallery Image"}
@@ -382,7 +382,7 @@ export default function Gallery() {
                 </div>
 
                 {/* Main Image */}
-                <div className="relative w-full h-[85vh] flex items-center justify-center px-20 py-16">
+                <div className="relative w-full h-[100vh] flex items-center justify-center px-4 py-4">
                   <img
                     src={galleryImages[selectedIndex].url}
                     alt={galleryImages[selectedIndex].title}
@@ -411,13 +411,6 @@ export default function Gallery() {
                 >
                   <ChevronRight className="w-10 h-10" />
                 </Button>
-
-                {/* Image Title */}
-                <div className="absolute bottom-8 left-0 right-0 text-center">
-                  <h3 className="text-2xl font-semibold text-white">
-                    {galleryImages[selectedIndex].title}
-                  </h3>
-                </div>
               </div>
             )}
           </DialogContent>
