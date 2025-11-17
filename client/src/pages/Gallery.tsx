@@ -193,7 +193,7 @@ export default function Gallery() {
                     key={image.id}
                     ref={(el) => thumbnailRefs.current[index] = el}
                     onClick={() => goToSlide(index)}
-                    className={`flex-shrink-0 w-32 h-32 overflow-hidden rounded-lg border-3 transition-all duration-300 ${
+                    className={`flex-shrink-0 w-24 h-24 overflow-hidden rounded-lg border-3 transition-all duration-300 ${
                       index === currentIndex
                         ? 'border-yellow-500 opacity-100 scale-110 ring-2 ring-yellow-500 ring-offset-2 ring-offset-black'
                         : 'border-gray-700 opacity-60 hover:opacity-90 hover:border-gray-500 hover:scale-105'
