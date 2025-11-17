@@ -74,7 +74,7 @@ export default function Features() {
             >
               <Dialog>
                 <DialogTrigger asChild>
-                  <Card className="p-6 bg-gray-900/50 backdrop-blur-lg border-gray-800 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer">
+                  <Card className="p-6 bg-gray-900/50 backdrop-blur-lg border-gray-800 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer h-full min-h-[200px] flex flex-col">
                     <feature.icon className="w-12 h-12 text-white mb-4" />
                     <h3 className="text-xl font-semibold text-white mb-2">
                       {feature.title}
