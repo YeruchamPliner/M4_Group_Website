@@ -4,12 +4,17 @@ import { storage } from "./storage";
 import nodemailer from "nodemailer";
 
 export function registerRoutes(app: Express): Server {
-  // Configure email transporter
+  // Configure email transporter for Outlook/Office 365
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false, // Use STARTTLS
     auth: {
-      user: process.env.EMAIL_USER || 'your-email@gmail.com',
-      pass: process.env.EMAIL_PASS || 'your-app-password'
+      user: process.env.EMAIL_USER || 'your-email@outlook.com',
+      pass: process.env.EMAIL_PASS || 'your-password'
+    },
+    tls: {
+      rejectUnauthorized: true
     }
   });
 
