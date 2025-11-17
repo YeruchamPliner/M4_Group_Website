@@ -34,6 +34,18 @@ import img28 from "../../../attached_assets/CD8CF7DD-3539-4F82-8E11-6D0694E9F8C1
 import img29 from "../../../attached_assets/C85B6CF0-574A-4117-AAC7-58C5593C0B55_1_105_c_1763417763361.jpeg";
 import img30 from "../../../attached_assets/C4CF4D30-11FE-46B0-B237-81DBFD8F3B68_1_105_c_1763417763361.jpeg";
 import img31 from "../../../attached_assets/BD6A601D-0B28-4605-B87A-CD4392B1D2AF_1_105_c_1763417763362.jpeg";
+import img32 from "../../../attached_assets/Leesburg FC153B15-6993-4976-9DF1-C76C9FFF20AA_1763421722975.jpeg";
+import img33 from "../../../attached_assets/DJI_0389_1763421722975.JPG";
+import img34 from "../../../attached_assets/20240311_180732 (1)_1763421722975.jpg";
+import img35 from "../../../attached_assets/20240416_164013 (1)_1763421722976.jpg";
+import img36 from "../../../attached_assets/IMG-20240222-WA0004 (1)_1763421722976.jpg";
+import img37 from "../../../attached_assets/20250820_134754 (1)_1763421722976.jpg";
+import img38 from "../../../attached_assets/20241224_113735 (1)_1763421722976.jpg";
+import img39 from "../../../attached_assets/20240311_180732_1763421722976.jpg";
+import img40 from "../../../attached_assets/IMG-20240321-WA0062_1763421722977.jpg";
+import img41 from "../../../attached_assets/IMG-20240321-WA0059_1763421722977.jpg";
+import img42 from "../../../attached_assets/20240129_172045_1763421722977.jpg";
+import img43 from "../../../attached_assets/20230801_125754_1763421722977.jpg";
 
 const galleryImages = [
   {
@@ -215,6 +227,78 @@ const galleryImages = [
     url: img31,
     title: "Open Concept Community Space",
     description: "Bright multi-use area with dining tables and lounge seating"
+  },
+  {
+    id: 31,
+    url: img32,
+    title: "Construction Site - Leesburg Project",
+    description: "Active construction site showing materials delivery and equipment"
+  },
+  {
+    id: 32,
+    url: img33,
+    title: "Aerial Foundation Construction View",
+    description: "Drone view of foundation and utility infrastructure installation"
+  },
+  {
+    id: 33,
+    url: img34,
+    title: "Premium Bathroom Tile Installation",
+    description: "High-end tile work with modern mosaic flooring detail"
+  },
+  {
+    id: 34,
+    url: img35,
+    title: "Custom Reception Desk",
+    description: "Modern reception area with rustic wood accent wall and contemporary lighting"
+  },
+  {
+    id: 35,
+    url: img36,
+    title: "Healthcare Facility Nursing Station",
+    description: "Central nursing station with panoramic hallway view"
+  },
+  {
+    id: 36,
+    url: img37,
+    title: "Patient Care Corridor",
+    description: "Clean, modern hallway with comfortable seating and artwork"
+  },
+  {
+    id: 37,
+    url: img38,
+    title: "Main Facility Corridor",
+    description: "Wide hallway with elevator access and decorative wall rails"
+  },
+  {
+    id: 38,
+    url: img39,
+    title: "Accessible Bathroom Design",
+    description: "Contemporary bathroom featuring luxury tile and accessibility features"
+  },
+  {
+    id: 39,
+    url: img40,
+    title: "Semi-Private Patient Room",
+    description: "Comfortable two-bed patient room with modern furnishings and natural light"
+  },
+  {
+    id: 40,
+    url: img41,
+    title: "Private Patient Suite",
+    description: "Spacious single patient room with comfortable seating and accent wall"
+  },
+  {
+    id: 41,
+    url: img42,
+    title: "Resident Living Corridor",
+    description: "Bright hallway with skylight and modern flooring design"
+  },
+  {
+    id: 42,
+    url: img43,
+    title: "Extended Care Facility Hallway",
+    description: "Long corridor with safety rails and contemporary finishes"
   }
 ];
 
