@@ -37,7 +37,7 @@ export default function Services() {
     <div className="min-h-screen pt-20 relative">
       {/* Background Video */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-black/75" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
         <video
           autoPlay
           loop

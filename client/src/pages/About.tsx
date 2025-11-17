@@ -34,7 +34,7 @@ export default function About() {
     <div className="min-h-screen pt-20 relative">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gray-900/80" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-gray-900/40" /> {/* Overlay */}
         <img
           src={aboutBg}
           alt="Aerial View of Construction Site Foundation"

@@ -42,7 +42,7 @@ export default function Features() {
     <section ref={ref} className="py-24 relative">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/70" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
         <img
           src={featuresBg}
           alt="Modern Patient Room"
