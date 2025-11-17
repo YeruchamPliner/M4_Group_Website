@@ -29,11 +29,6 @@ const slides = [
     title: "Healthcare Excellence"
   },
   {
-    url: img9,
-    alt: "Professional Reception Area",
-    title: "Welcoming Spaces"
-  },
-  {
     url: img8,
     alt: "Spacious Patient Accommodation",
     title: "Quality Care Spaces"
