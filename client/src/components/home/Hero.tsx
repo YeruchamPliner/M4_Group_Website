@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { User, Mail, Phone, Building, MapPin, Calendar, MessageSquare, DollarSign, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import img1 from "../../assets/20230919_115117_1761449206238.jpg";
 import img2 from "../../assets/IMG-20240801-WA0036_1761449206239.jpg";
 import img7 from "../../assets/IMG-20240321-WA0057_1761449206243.jpg";
@@ -46,6 +47,7 @@ const slides = [
 ];
 
 export default function Hero() {
+  const { toast } = useToast();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -73,8 +75,12 @@ export default function Hero() {
     e.preventDefault();
 
     // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email) {
-      alert("Please fill in all required fields (First Name, Last Name, and Email)");
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.projectType || !formData.location) {
+      toast({
+        title: "Missing Required Fields",
+        description: "Please fill in all required fields marked with *",
+        variant: "destructive",
+      });
       return;
     }
 
@@ -88,7 +94,10 @@ export default function Hero() {
       });
 
       if (response.ok) {
-        alert("Thank you for your consultation request! We will contact you within 24 hours to schedule your free consultation.");
+        toast({
+          title: "Consultation Request Received!",
+          description: "Thank you! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.",
+        });
         
         // Reset form
         setFormData({
@@ -105,11 +114,19 @@ export default function Hero() {
           preferredContact: ""
         });
       } else {
-        alert("There was an error submitting your form. Please try again.");
+        toast({
+          title: "Submission Failed",
+          description: "There was an error submitting your form. Please try again.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert("There was an error submitting your form. Please try again.");
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your form. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -231,29 +248,39 @@ export default function Hero() {
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                              <Label htmlFor="email" className="text-gray-300">Email Address *</Label>
-                              <Input
-                                id="email"
-                                type="email"
-                                value={formData.email}
-                                onChange={(e) => handleInputChange("email", e.target.value)}
-                                className="bg-gray-800 border-gray-700 text-white"
-                                required
-                              />
-                            </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="email" className="text-gray-300">Email Address *</Label>
+                            <Input
+                              id="email"
+                              type="email"
+                              value={formData.email}
+                              onChange={(e) => handleInputChange("email", e.target.value)}
+                              className="bg-gray-800 border-gray-700 text-white"
+                              required
+                            />
+                          </div>
 
-                            <div className="space-y-2">
-                              <Label htmlFor="phone" className="text-gray-300">Phone Number</Label>
-                              <Input
-                                id="phone"
-                                type="tel"
-                                value={formData.phone}
-                                onChange={(e) => handleInputChange("phone", e.target.value)}
-                                className="bg-gray-800 border-gray-700 text-white"
-                              />
-                            </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="phone" className="text-gray-300">Phone Number *</Label>
+                            <Input
+                              id="phone"
+                              type="tel"
+                              value={formData.phone}
+                              onChange={(e) => handleInputChange("phone", e.target.value)}
+                              className="bg-gray-800 border-gray-700 text-white"
+                              placeholder="(555) 123-4567"
+                              required
+                            />
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="company" className="text-gray-300">Company/Organization</Label>
+                            <Input
+                              id="company"
+                              value={formData.company}
+                              onChange={(e) => handleInputChange("company", e.target.value)}
+                              className="bg-gray-800 border-gray-700 text-white"
+                            />
                           </div>
                         </div>
 
@@ -265,16 +292,6 @@ export default function Hero() {
                           </h2>
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                              <Label htmlFor="company" className="text-gray-300">Company/Organization</Label>
-                              <Input
-                                id="company"
-                                value={formData.company}
-                                onChange={(e) => handleInputChange("company", e.target.value)}
-                                className="bg-gray-800 border-gray-700 text-white"
-                              />
-                            </div>
-
                             <div className="space-y-2">
                               <Label htmlFor="projectType" className="text-gray-300">Project Type *</Label>
                               <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
@@ -292,20 +309,21 @@ export default function Hero() {
                                 </SelectContent>
                               </Select>
                             </div>
-                          </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="location" className="text-gray-300">Project Location</Label>
+                              <Label htmlFor="location" className="text-gray-300">Project Location *</Label>
                               <Input
                                 id="location"
                                 value={formData.location}
                                 onChange={(e) => handleInputChange("location", e.target.value)}
                                 className="bg-gray-800 border-gray-700 text-white"
                                 placeholder="City, State"
+                                required
                               />
                             </div>
+                          </div>
 
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                               <Label htmlFor="budget" className="text-gray-300">Estimated Budget</Label>
                               <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
@@ -322,22 +340,22 @@ export default function Hero() {
                                 </SelectContent>
                               </Select>
                             </div>
-                          </div>
 
-                          <div className="space-y-2">
-                            <Label htmlFor="timeline" className="text-gray-300">Project Timeline</Label>
-                            <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
-                              <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
-                                <SelectValue placeholder="Select timeline" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
-                                <SelectItem value="short-term">Short-term (3-6 months)</SelectItem>
-                                <SelectItem value="medium-term">Medium-term (6-12 months)</SelectItem>
-                                <SelectItem value="long-term">Long-term (1+ years)</SelectItem>
-                                <SelectItem value="planning">Planning phase</SelectItem>
-                              </SelectContent>
-                            </Select>
+                            <div className="space-y-2">
+                              <Label htmlFor="timeline" className="text-gray-300">Project Timeline</Label>
+                              <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
+                                <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                                  <SelectValue placeholder="Select timeline" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
+                                  <SelectItem value="short-term">Short-term (3-6 months)</SelectItem>
+                                  <SelectItem value="medium-term">Medium-term (6-12 months)</SelectItem>
+                                  <SelectItem value="long-term">Long-term (1+ years)</SelectItem>
+                                  <SelectItem value="planning">Planning phase</SelectItem>
+                                </SelectContent>
+                              </Select>
+                            </div>
                           </div>
 
                           <div className="space-y-2">
