@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { PencilRuler, Building2, Hammer, ClipboardCheck, Users, Shield, Zap, Globe, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import featuresBg from "../../assets/20240416_164013_1761449206245.jpg";
+import featuresBg from "../../assets/IMG_6409_1763385954188.webp";
 
 const features = [
   {
@@ -45,7 +45,7 @@ export default function Features() {
         <div className="absolute inset-0 bg-black/70" /> {/* Overlay */}
         <img
           src={featuresBg}
-          alt="Professional Reception Area"
+          alt="Modern Patient Room"
           className="object-cover w-full h-full"
         />
       </div>
