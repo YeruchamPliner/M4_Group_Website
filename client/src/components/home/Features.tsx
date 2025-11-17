@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { PencilRuler, Building2, Hammer, ClipboardCheck, Users, Shield, Zap, Globe, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import featuresBg from "../../assets/IMG_6409_1763385954188.webp";
+import featuresBg from "../../../../attached_assets/8C8AA876-1CA8-4FC1-BC1D-F54BA70E03A1_1_105_c_1763418996349.jpeg";
 
 const features = [
   {
