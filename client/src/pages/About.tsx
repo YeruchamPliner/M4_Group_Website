@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Building2, CheckCircle } from "lucide-react";
 import { useInView } from "react-intersection-observer";
-import aboutBg from "../assets/20230919_115117_1761449206238.jpg";
+import aboutBg from "../assets/DJI_0426_1763385527166.jpg";
 
 const stats = [
   {
@@ -37,7 +37,7 @@ export default function About() {
         <div className="absolute inset-0 bg-gray-900/80" /> {/* Overlay */}
         <img
           src={aboutBg}
-          alt="Modern Dining and Community Area"
+          alt="Aerial View of Construction Site Foundation"
           className="object-cover w-full h-full"
         />
       </div>
