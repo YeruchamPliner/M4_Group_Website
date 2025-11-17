@@ -35,7 +35,7 @@ import img29 from "../../../attached_assets/C85B6CF0-574A-4117-AAC7-58C5593C0B55
 import img30 from "../../../attached_assets/C4CF4D30-11FE-46B0-B237-81DBFD8F3B68_1_105_c_1763417763361.jpeg";
 import img31 from "../../../attached_assets/BD6A601D-0B28-4605-B87A-CD4392B1D2AF_1_105_c_1763417763362.jpeg";
 import img32 from "../../../attached_assets/Leesburg FC153B15-6993-4976-9DF1-C76C9FFF20AA_1763421722975.jpeg";
-import img33 from "../../../attached_assets/DJI_0389_1763421722975.JPG";
+import img33 from "../../../attached_assets/DJI_0389_1763421722975.jpg";
 import img34 from "../../../attached_assets/20240311_180732 (1)_1763421722975.jpg";
 import img35 from "../../../attached_assets/20240416_164013 (1)_1763421722976.jpg";
 import img36 from "../../../attached_assets/IMG-20240222-WA0004 (1)_1763421722976.jpg";
