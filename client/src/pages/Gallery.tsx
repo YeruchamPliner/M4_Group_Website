@@ -46,6 +46,7 @@ import img40 from "../../../attached_assets/IMG-20240321-WA0062_1763421722977.jp
 import img41 from "../../../attached_assets/IMG-20240321-WA0059_1763421722977.jpg";
 import img42 from "../../../attached_assets/20240129_172045_1763421722977.jpg";
 import img43 from "../../../attached_assets/20230801_125754_1763421722977.jpg";
+import img44 from "../../../attached_assets/WhatsApp Image 2025-11-03 at 04.26.48_1c9da2ab_1763422493587.jpg";
 
 const galleryImages = [
   {
@@ -299,6 +300,12 @@ const galleryImages = [
     url: img43,
     title: "Extended Care Facility Hallway",
     description: "Long corridor with safety rails and contemporary finishes"
+  },
+  {
+    id: 43,
+    url: img44,
+    title: "Multi-Story Construction Project",
+    description: "Active construction site showing building envelope and structural framing progress"
   }
 ];
 
