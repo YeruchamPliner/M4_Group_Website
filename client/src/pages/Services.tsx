@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { PencilRuler, Building2, Hammer, ClipboardCheck } from "lucide-react";
+import constructionVideo from "../assets/construction-video.mp4";
 
 const services = [
   {
@@ -34,14 +35,18 @@ const services = [
 export default function Services() {
   return (
     <div className="min-h-screen pt-20 relative">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <div className="absolute inset-0 bg-black/75" /> {/* Overlay */}
-        <img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
-          alt="Construction and Development Services"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-cover w-full h-full"
-        />
+        >
+          <source src={constructionVideo} type="video/mp4" />
+        </video>
       </div>
       <div className="container mx-auto px-6 py-16 relative z-10">
         <motion.div
