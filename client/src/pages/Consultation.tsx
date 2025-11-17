@@ -7,12 +7,15 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar, MapPin, Phone, Mail, Building, DollarSign } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Consultation() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     company: "",
     projectType: "",
     location: "",
@@ -26,8 +29,12 @@ export default function Consultation() {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.projectType || !formData.location) {
-      alert("Please fill in all required fields marked with *");
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.projectType || !formData.location) {
+      toast({
+        title: "Missing Required Fields",
+        description: "Please fill in all required fields marked with *",
+        variant: "destructive",
+      });
       return;
     }
     
@@ -41,13 +48,17 @@ export default function Consultation() {
       });
 
       if (response.ok) {
-        alert("Thank you for your consultation request! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.");
+        toast({
+          title: "Consultation Request Received!",
+          description: "Thank you! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.",
+        });
         
         // Reset form
         setFormData({
           firstName: "",
           lastName: "",
           email: "",
+          phone: "",
           company: "",
           projectType: "",
           location: "",
@@ -57,11 +68,19 @@ export default function Consultation() {
           preferredContact: ""
         });
       } else {
-        alert("There was an error submitting your form. Please try again.");
+        toast({
+          title: "Submission Failed",
+          description: "There was an error submitting your form. Please try again.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert("There was an error submitting your form. Please try again.");
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your form. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -143,6 +162,19 @@ export default function Consultation() {
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="bg-gray-800 border-gray-700 text-white"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-gray-300">Phone Number *</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                    className="bg-gray-800 border-gray-700 text-white"
+                    placeholder="(555) 123-4567"
                     required
                   />
                 </div>
