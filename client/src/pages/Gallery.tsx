@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import img1 from "../assets/20230919_115117_1761449206238.jpg";
@@ -78,6 +78,8 @@ const galleryImages = [
 
 export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const thumbnailContainerRef = useRef<HTMLDivElement>(null);
+  const thumbnailRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const nextSlide = () => {
     setCurrentIndex((current) => (current + 1) % galleryImages.length);
@@ -90,6 +92,25 @@ export default function Gallery() {
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
+
+  useEffect(() => {
+    if (thumbnailContainerRef.current && thumbnailRefs.current[currentIndex]) {
+      const container = thumbnailContainerRef.current;
+      const thumbnail = thumbnailRefs.current[currentIndex];
+      
+      if (thumbnail) {
+        const containerWidth = container.offsetWidth;
+        const thumbnailLeft = thumbnail.offsetLeft;
+        const thumbnailWidth = thumbnail.offsetWidth;
+        const scrollLeft = thumbnailLeft - (containerWidth / 2) + (thumbnailWidth / 2);
+        
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [currentIndex]);
 
   return (
     <div className="min-h-screen pt-32 bg-black">
@@ -161,25 +182,32 @@ export default function Gallery() {
             </div>
 
             {/* Thumbnail Navigation */}
-            <div className="mt-6 grid grid-cols-5 md:grid-cols-10 gap-2">
-              {galleryImages.map((image, index) => (
-                <button
-                  key={image.id}
-                  onClick={() => goToSlide(index)}
-                  className={`aspect-square overflow-hidden rounded-lg border-2 transition-all duration-300 ${
-                    index === currentIndex
-                      ? 'border-yellow-500 opacity-100 scale-105'
-                      : 'border-gray-700 opacity-50 hover:opacity-75 hover:border-gray-500'
-                  }`}
-                  data-testid={`thumbnail-${index}`}
-                >
-                  <img
-                    src={image.url}
-                    alt={`Thumbnail ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
+            <div 
+              ref={thumbnailContainerRef}
+              className="mt-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900"
+              style={{ scrollbarWidth: 'thin' }}
+            >
+              <div className="flex gap-3 pb-4 min-w-min px-2">
+                {galleryImages.map((image, index) => (
+                  <button
+                    key={image.id}
+                    ref={(el) => thumbnailRefs.current[index] = el}
+                    onClick={() => goToSlide(index)}
+                    className={`flex-shrink-0 w-32 h-32 overflow-hidden rounded-lg border-3 transition-all duration-300 ${
+                      index === currentIndex
+                        ? 'border-yellow-500 opacity-100 scale-110 ring-2 ring-yellow-500 ring-offset-2 ring-offset-black'
+                        : 'border-gray-700 opacity-60 hover:opacity-90 hover:border-gray-500 hover:scale-105'
+                    }`}
+                    data-testid={`thumbnail-${index}`}
+                  >
+                    <img
+                      src={image.url}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
