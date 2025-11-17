@@ -12,14 +12,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { User, Mail, Phone, Building, MapPin, Calendar, MessageSquare, DollarSign, Clock } from "lucide-react";
 import img1 from "../../assets/20230919_115117_1761449206238.jpg";
 import img2 from "../../assets/IMG-20240801-WA0036_1761449206239.jpg";
-import img3 from "../../assets/IMG-20241209-WA0118_1761449206240.jpg";
-import img4 from "../../assets/IMG-20240801-WA0016_1761449206240.jpg";
-import img5 from "../../assets/IMG-20240801-WA0020_1761449206241.jpg";
-import img6 from "../../assets/IMG_6409_1761449206242.webp";
 import img7 from "../../assets/IMG-20240321-WA0057_1761449206243.jpg";
 import img8 from "../../assets/20240730_112919_1761449206244.jpg";
 import img9 from "../../assets/20240416_164013_1761449206245.jpg";
-import img10 from "../../assets/20240730_112659_1761449206246.jpg";
+import img11 from "../../assets/20240730_112608_1763384881743.jpg";
 
 const slides = [
   {
@@ -33,29 +29,9 @@ const slides = [
     title: "Healthcare Excellence"
   },
   {
-    url: img3,
-    alt: "Contemporary Dining Space",
-    title: "Quality Interiors"
-  },
-  {
-    url: img4,
-    alt: "Elegant Dining Room Design",
-    title: "Comfort & Style"
-  },
-  {
-    url: img5,
-    alt: "Accessible Bathroom Facilities",
-    title: "Accessible Design"
-  },
-  {
-    url: img6,
-    alt: "Modern Patient Room",
-    title: "Patient Comfort"
-  },
-  {
-    url: img7,
-    alt: "Comfortable Resident Room",
-    title: "Resident Care"
+    url: img9,
+    alt: "Professional Reception Area",
+    title: "Welcoming Spaces"
   },
   {
     url: img8,
@@ -63,14 +39,14 @@ const slides = [
     title: "Quality Care Spaces"
   },
   {
-    url: img9,
-    alt: "Professional Reception Area",
-    title: "Welcoming Spaces"
+    url: img7,
+    alt: "Comfortable Resident Room",
+    title: "Resident Care"
   },
   {
-    url: img10,
-    alt: "Medical Workspace and Nursing Station",
-    title: "Efficient Workspaces"
+    url: img11,
+    alt: "Modern Nursing Station",
+    title: "Professional Workspaces"
   }
 ];
 
@@ -169,7 +145,9 @@ export default function Hero() {
           ))}
         </div>
 
-        <GridPattern className="absolute inset-0 z-10 opacity-40" />
+        <div className="absolute inset-0 z-10 opacity-40">
+          <GridPattern />
+        </div>
 
         <div className="container mx-auto px-6 relative z-20">
           <motion.div
