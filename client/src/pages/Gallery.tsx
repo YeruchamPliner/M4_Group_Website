@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import img1 from "../assets/20230919_115117_1761449206238.jpg";
 import img2 from "../assets/IMG-20240801-WA0036_1761449206239.jpg";
 import img3 from "../assets/IMG-20241209-WA0118_1761449206240.jpg";
@@ -280,27 +281,24 @@ export default function Gallery() {
 
         {/* Modal/Lightbox */}
         <Dialog open={selectedIndex !== null} onOpenChange={(open) => !open && closeImage()}>
-          <DialogContent className="max-w-7xl w-full h-[90vh] bg-black/95 border-gray-800 p-0">
+          <DialogContent className="max-w-[95vw] w-full max-h-[95vh] bg-black/95 border-gray-800 p-0 overflow-hidden">
+            <VisuallyHidden>
+              <DialogTitle>
+                {selectedIndex !== null ? galleryImages[selectedIndex].title : "Gallery Image"}
+              </DialogTitle>
+              <DialogDescription>
+                {selectedIndex !== null ? galleryImages[selectedIndex].description : "View gallery image"}
+              </DialogDescription>
+            </VisuallyHidden>
             {selectedIndex !== null && (
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* Close Button */}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={closeImage}
-                  className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12"
-                  data-testid="button-close-modal"
-                >
-                  <X className="w-8 h-8" />
-                </Button>
-
                 {/* Image Counter */}
                 <div className="absolute top-4 left-4 z-50 bg-black/50 backdrop-blur-sm text-white px-6 py-3 rounded-full text-lg font-medium">
                   {selectedIndex + 1} / {galleryImages.length}
                 </div>
 
                 {/* Main Image */}
-                <div className="relative w-full h-full flex items-center justify-center p-20">
+                <div className="relative w-full h-[85vh] flex items-center justify-center px-20 py-16">
                   <img
                     src={galleryImages[selectedIndex].url}
                     alt={galleryImages[selectedIndex].title}
