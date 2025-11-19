@@ -136,7 +136,7 @@ export default function Hero() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-24 md:pt-32 overflow-hidden">
         {/* Background Images */}
         <div className="absolute inset-0 z-0">
           {slides.map((slide, index) => (
@@ -161,7 +161,7 @@ export default function Hero() {
           <GridPattern />
         </div>
 
-        <div className="container mx-auto px-6 relative z-20">
+        <div className="container mx-auto px-4 sm:px-6 relative z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -172,7 +172,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-block px-6 py-3 mb-6 text-lg md:text-xl font-medium bg-gray-800 text-gray-200 rounded-full"
+              className="inline-block px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 text-base sm:text-lg md:text-xl font-medium bg-gray-800 text-gray-200 rounded-full"
             >
               Design • Development • Construction
             </motion.span>
@@ -181,7 +181,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight px-2"
             >
               Building Excellence, Delivering Results
             </motion.h1>
@@ -190,7 +190,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-200 mb-8 sm:mb-12 px-2"
             >
               M4 Development Group provides comprehensive design-build solutions for Healthcare, Commercial and Multi-Family projects. From concept to completion, we transform your vision into reality.
             </motion.p>
@@ -199,28 +199,28 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex justify-center items-center"
+              className="flex justify-center items-center px-4"
             >
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="lg" className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold">
+                  <Button size="lg" className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                     Get a Free Consultation
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="bg-gray-900/95 backdrop-blur-lg border-gray-800 max-w-4xl max-h-[90vh] overflow-y-auto">
+                <DialogContent className="bg-gray-900/95 backdrop-blur-lg border-gray-800 max-w-[95vw] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl max-h-[90vh] overflow-y-auto">
                   <DialogHeader>
-                    <DialogTitle className="text-3xl text-white mb-4">
+                    <DialogTitle className="text-2xl sm:text-3xl text-white mb-2 sm:mb-4">
                       Free Consultation
                     </DialogTitle>
                   </DialogHeader>
 
-                  <div className="max-w-4xl mx-auto">
-                    <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8">
+                  <div className="w-full">
+                    <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-4 sm:p-6 md:p-8">
                       <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Personal Information */}
                         <div className="space-y-4">
-                          <h2 className="text-2xl font-semibold text-white flex items-center">
-                            <Mail className="w-6 h-6 mr-2" />
+                          <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center">
+                            <Mail className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                             Contact Information
                           </h2>
 
@@ -286,8 +286,8 @@ export default function Hero() {
 
                         {/* Project Information */}
                         <div className="space-y-4">
-                          <h2 className="text-2xl font-semibold text-white flex items-center">
-                            <Building className="w-6 h-6 mr-2" />
+                          <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center">
+                            <Building className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                             Project Details
                           </h2>
 
@@ -372,8 +372,8 @@ export default function Hero() {
 
                         {/* Consultation Preferences */}
                         <div className="space-y-4">
-                          <h2 className="text-2xl font-semibold text-white flex items-center">
-                            <Calendar className="w-6 h-6 mr-2" />
+                          <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center">
+                            <Calendar className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                             Consultation Preferences
                           </h2>
 

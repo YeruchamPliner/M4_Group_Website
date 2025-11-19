@@ -333,8 +333,8 @@ export default function Gallery() {
   };
 
   return (
-    <div className="min-h-screen pt-32 bg-black">
-      <div className="container mx-auto px-6 py-12">
+    <div className="min-h-screen pt-24 md:pt-32 bg-black">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-5 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 max-w-7xl mx-auto">
           {galleryImages.map((image, index) => (
             <motion.button
               key={image.id}

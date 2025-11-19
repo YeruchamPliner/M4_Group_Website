@@ -89,27 +89,27 @@ export default function Consultation() {
   };
 
   return (
-    <div className="bg-black min-h-screen pt-32">
-      <div className="container mx-auto px-6 py-12">
+    <div className="bg-black min-h-screen pt-24 md:pt-32">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-2">
             Free Consultation
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Let's discuss your project needs and schedule a consultation with our design-build experts
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
           {/* Contact Information Section */}
-          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-6 flex items-center">
-              <Phone className="w-6 h-6 mr-2" />
+          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6 flex items-center">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
               Contact Us
             </h2>
             <div className="flex items-center space-x-3 text-gray-300">
@@ -121,12 +121,12 @@ export default function Consultation() {
             </div>
           </Card>
 
-          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8">
+          <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-4 sm:p-6 md:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-semibold text-white flex items-center">
-                  <Mail className="w-6 h-6 mr-2" />
+                <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                   Contact Information
                 </h2>
                 

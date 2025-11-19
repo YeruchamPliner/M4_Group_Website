@@ -34,7 +34,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen pt-20 relative">
+    <div className="min-h-screen pt-24 md:pt-32 relative">
       {/* Background Video */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
@@ -48,14 +48,14 @@ export default function Services() {
           <source src={constructionVideo} type="video/mp4" />
         </video>
       </div>
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-white mb-12">Our Services</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-12">Our Services</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}

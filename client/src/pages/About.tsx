@@ -31,7 +31,7 @@ export default function About() {
   });
 
   return (
-    <div className="min-h-screen pt-20 relative">
+    <div className="min-h-screen pt-24 md:pt-32 relative">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gray-900/60" /> {/* Overlay */}
@@ -42,32 +42,32 @@ export default function About() {
         />
       </div>
       
-      <div className="container mx-auto px-6 py-24 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-2">
             About M4 Development Group
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Building excellence through innovation, expertise, communication, and unwavering commitment to quality
           </p>
         </motion.div>
 
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed px-2">
               With over 25 years of combined experience in the Healthcare and Construction Industries, M4 Development Group has established itself as a premier design-build firm specializing in Healthcare Facilities, Commercial Properties, and Multi-Family Residential Projects. Whether its a new Ground-Up or Renovation project, M4 can handle it all.
             </p>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed px-2">
               Our comprehensive approach integrates Architectural design, Engineering, and Construction Services under one roof, ensuring seamless project delivery from initial concept through final completion. We pride ourselves on building long-term relationships with our clients through exceptional quality, attention to detail, value engineering and unwavering commitment to excellence.
             </p>
             
