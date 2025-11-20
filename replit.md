@@ -13,6 +13,8 @@ A professional B2B SaaS landing page for M4 Development Group, specializing in d
 - **Email**: Nodemailer with Gmail integration for consultation forms
 
 ## Recent Changes
+- **November 20, 2025**: Enhanced gallery modal controls for mobile with prominent white close button and improved navigation visibility
+- **November 20, 2025**: Completed comprehensive mobile responsiveness optimization across all pages (navigation, forms, hero, gallery, services)
 - **November 17, 2025**: Made service boxes uniform height across "What We Offer" and Services pages
 - **November 17, 2025**: Updated "What We Offer" section background with lobby image
 - **November 17, 2025**: Changed Services page grid to 4 columns (matching home page layout)

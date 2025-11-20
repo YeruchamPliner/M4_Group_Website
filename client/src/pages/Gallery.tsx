@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -383,8 +383,19 @@ export default function Gallery() {
             </VisuallyHidden>
             {selectedIndex !== null && (
               <div className="relative w-full h-full flex items-center justify-center">
+                {/* Close Button - Mobile Optimized */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={closeImage}
+                  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/90 hover:bg-white text-black rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-lg"
+                  data-testid="button-close-modal"
+                >
+                  <X className="w-6 h-6 sm:w-8 sm:h-8" />
+                </Button>
+
                 {/* Image Counter */}
-                <div className="absolute top-4 left-4 z-50 bg-black/50 backdrop-blur-sm text-white px-6 py-3 rounded-full text-lg font-medium">
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50 bg-black/50 backdrop-blur-sm text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-lg font-medium">
                   {selectedIndex + 1} / {galleryImages.length}
                 </div>
 
@@ -402,10 +413,10 @@ export default function Gallery() {
                   variant="ghost"
                   size="icon"
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 z-50"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-12 h-12 sm:w-14 sm:h-14 z-50 shadow-lg"
                   data-testid="button-prev-modal"
                 >
-                  <ChevronLeft className="w-10 h-10" />
+                  <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10" />
                 </Button>
 
                 {/* Next Button */}
@@ -413,10 +424,10 @@ export default function Gallery() {
                   variant="ghost"
                   size="icon"
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 z-50"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-12 h-12 sm:w-14 sm:h-14 z-50 shadow-lg"
                   data-testid="button-next-modal"
                 >
-                  <ChevronRight className="w-10 h-10" />
+                  <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10" />
                 </Button>
               </div>
             )}
