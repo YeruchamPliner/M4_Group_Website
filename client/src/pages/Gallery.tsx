@@ -372,7 +372,7 @@ export default function Gallery() {
 
         {/* Modal/Lightbox */}
         <Dialog open={selectedIndex !== null} onOpenChange={(open) => !open && closeImage()}>
-          <DialogContent className="max-w-[100vw] w-full max-h-[100vh] h-[100vh] bg-black/95 border-gray-800 p-0 overflow-hidden [&>button]:hidden">
+          <DialogContent className="max-w-[100vw] w-full h-screen bg-black/95 border-gray-800 p-0 overflow-hidden [&>button]:hidden">
             <VisuallyHidden>
               <DialogTitle>
                 {selectedIndex !== null ? galleryImages[selectedIndex].title : "Gallery Image"}
@@ -388,19 +388,19 @@ export default function Gallery() {
                   variant="ghost"
                   size="icon"
                   onClick={closeImage}
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/30 hover:bg-white/50 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14"
+                  className="absolute top-16 right-2 sm:top-4 sm:right-4 z-50 bg-white/30 hover:bg-white/50 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14"
                   data-testid="button-close-modal"
                 >
                   <X className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Button>
 
                 {/* Image Counter */}
-                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50 bg-black/50 backdrop-blur-sm text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-lg font-medium">
+                <div className="absolute top-16 left-2 sm:top-4 sm:left-4 z-50 bg-black/50 backdrop-blur-sm text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-lg font-medium">
                   {selectedIndex + 1} / {galleryImages.length}
                 </div>
 
                 {/* Main Image */}
-                <div className="relative w-full h-[100vh] flex items-center justify-center px-4 py-4">
+                <div className="relative w-full h-full flex items-center justify-center px-4 py-16 sm:py-4">
                   <img
                     src={galleryImages[selectedIndex].url}
                     alt={galleryImages[selectedIndex].title}
