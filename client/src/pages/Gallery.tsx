@@ -372,7 +372,7 @@ export default function Gallery() {
 
         {/* Modal/Lightbox */}
         <Dialog open={selectedIndex !== null} onOpenChange={(open) => !open && closeImage()}>
-          <DialogContent className="max-w-[100vw] w-full max-h-[100vh] h-[100vh] bg-black/95 border-gray-800 p-0 overflow-hidden">
+          <DialogContent className="max-w-[100vw] w-full max-h-[100vh] h-[100vh] bg-black/95 border-gray-800 p-0 overflow-hidden [&>button]:hidden">
             <VisuallyHidden>
               <DialogTitle>
                 {selectedIndex !== null ? galleryImages[selectedIndex].title : "Gallery Image"}
@@ -413,7 +413,7 @@ export default function Gallery() {
                   variant="ghost"
                   size="icon"
                   onClick={prevImage}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-12 h-12 sm:w-14 sm:h-14 z-50 shadow-lg"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 z-50"
                   data-testid="button-prev-modal"
                 >
                   <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -424,7 +424,7 @@ export default function Gallery() {
                   variant="ghost"
                   size="icon"
                   onClick={nextImage}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full w-12 h-12 sm:w-14 sm:h-14 z-50 shadow-lg"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 z-50"
                   data-testid="button-next-modal"
                 >
                   <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10" />
