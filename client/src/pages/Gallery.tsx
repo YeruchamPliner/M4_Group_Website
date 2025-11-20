@@ -388,7 +388,7 @@ export default function Gallery() {
                   variant="ghost"
                   size="icon"
                   onClick={closeImage}
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/90 hover:bg-white text-black rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-lg"
+                  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/30 hover:bg-white/50 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14"
                   data-testid="button-close-modal"
                 >
                   <X className="w-6 h-6 sm:w-8 sm:h-8" />
