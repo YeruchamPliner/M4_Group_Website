@@ -38,5 +38,5 @@ args = "npm run dev"
 waitForPort = 5000
 
 [[ports]]
-localPort = 38563
-externalPort = 80
+localPort = 5000
+externalPort = 5000
