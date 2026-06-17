@@ -11,6 +11,9 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Consultation() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [companyWebsite, setCompanyWebsite] = useState(""); // honeypot
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -27,9 +30,16 @@ export default function Consultation() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    if (isSubmitting) return;
+
+    // Honeypot: if filled, it's a bot - fake success, send nothing.
+    if (companyWebsite) {
+      setSubmitted(true);
+      return;
+    }
+
     // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.projectType || !formData.location) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.projectType) {
       toast({
         title: "Missing Required Fields",
         description: "Please fill in all required fields marked with *",
@@ -39,15 +49,20 @@ export default function Consultation() {
     }
     
     try {
+      setIsSubmitting(true);
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, company_website: companyWebsite }),
       });
 
       if (response.ok) {
+        if (typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "generate_lead", { form: "consultation" });
+        }
+        setSubmitted(true);
         toast({
           title: "Consultation Request Received!",
           description: "Thank you! We will contact you within 24 hours using your preferred contact method to schedule your free consultation.",
@@ -68,6 +83,7 @@ export default function Consultation() {
           preferredContact: ""
         });
       } else {
+        setIsSubmitting(false);
         toast({
           title: "Submission Failed",
           description: "There was an error submitting your form. Please try again.",
@@ -75,6 +91,7 @@ export default function Consultation() {
         });
       }
     } catch (error) {
+      setIsSubmitting(false);
       console.error('Error submitting form:', error);
       toast({
         title: "Submission Failed",
@@ -87,6 +104,29 @@ export default function Consultation() {
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
+
+  if (submitted) {
+    return (
+      <div className="bg-black min-h-screen pt-24 md:pt-32 flex items-center justify-center px-4">
+        <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-8 sm:p-12 max-w-xl text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-500/20">
+            <Calendar className="h-8 w-8 text-yellow-500" />
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-4">Request Received</h1>
+          <p className="text-gray-300 mb-8">
+            Thank you. A member of the M4 Development Group team will reach out within 24 hours,
+            using your preferred contact method, to schedule your free consultation.
+          </p>
+          <Button
+            onClick={() => setSubmitted(false)}
+            className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold px-6"
+          >
+            Submit another request
+          </Button>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-black min-h-screen pt-24 md:pt-32">
@@ -123,6 +163,17 @@ export default function Consultation() {
 
           <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800 p-4 sm:p-6 md:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot - hidden from real users, catches bots */}
+              <input
+                type="text"
+                name="company_website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={companyWebsite}
+                onChange={(e) => setCompanyWebsite(e.target.value)}
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
+              />
               {/* Personal Information */}
               <div className="space-y-4">
                 <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center">
@@ -300,9 +351,10 @@ export default function Consultation() {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold px-8"
+                  disabled={isSubmitting}
+                  className="bg-yellow-600 text-black hover:bg-yellow-500 font-semibold px-8 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Schedule Free Consultation
+                  {isSubmitting ? "Sending..." : "Schedule Free Consultation"}
                 </Button>
               </div>
             </form>
